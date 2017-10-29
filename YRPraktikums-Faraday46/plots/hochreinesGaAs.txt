@@ -1,0 +1,10 @@
+# hochreines GaAs, d= 5.11 mm  
+# Wellenlänge [µm] | teta mit BFeld [Grad] |Bogenmin (BM) | teta ohne BFeld [Grad] | BM 
+1.96	 113	23	116	25	
+1.72	111	41	116	29
+2.65	112	23	116	30
+2.34	115	20	114	0
+1.06	105	45	117	20
+1.45	109	26	115	30
+1.29	117	30	111	20
+2.156	112	28	115	40	
