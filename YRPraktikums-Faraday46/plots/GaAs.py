@@ -72,7 +72,9 @@ print('Hildegard1:', unp.sqrt(C1/(a*10**12)))
 print('Hildegard2:', unp.sqrt(C2/(b*10**12)))
 print('Hildegard1/me:', unp.sqrt((C1/(a*10**12)))/me)
 print('Hildegard2/me:', unp.sqrt((C2/(b*10**12)))/me)
-
+H = np.mean([unp.sqrt((C1/(a*10**12)))/me,unp.sqrt((C2/(b*10**12)))/me])
+print('Mittlere Hildegard:' ,H)
+print('Relf:',relf(0.067,H))
 #Tabelle
 np.savetxt('HGaAstab.txt',np.column_stack([(hl*10**(-6)),ht,(ht/hd)]), delimiter=' & ',newline= r'\\'+'\n' )
 np.savetxt('1.nGaAstab.txt',np.column_stack([(l1*10**(-6)),t1,(t1/d1)]), delimiter=' & ',newline= r'\\'+'\n' )
