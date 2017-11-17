@@ -1,51 +1,50 @@
 \section{Diskussion}
 \label{sec:Diskussion}
-\subsection{Relativer Fehler}
-Alle relativen Fehler wurden nach der Formel
-\begin{equation*}
-  \tilde{x} = \frac{ \lvert x_{lit} - x_{mess} \rvert}{\lvert x_{lit} \rvert}
-  \cdot 100 \%
-\end{equation*}
-berechnet, dabei bezeichnet $x_{lit}$ den Literaturwert der Messgröße $x_{mess}$.
-
+%\subsection{Relativer Fehler}
+%Alle relativen Fehler wurden nach der Formel
+%\begin{equation*}
+%  \tilde{x} = \frac{ \lvert x_{lit} - x_{mess} \rvert}{\lvert x_{lit} \rvert}
+%  \cdot 100 \%
+%\end{equation*}
+%berechnet, dabei bezeichnet $x_{lit}$ den Literaturwert der Messgröße $x_{mess}$.
 \subsection{Diskussion der vom Versuchsaufbau fehlerbehafteten Größen}
 \label{sec:Fehler}
-Der verwendete Versuchsaufbau weist einige Fehler auf die besonders die gemessenen Winkel 
-beeinflussen. Der Selektivverstärker kann nicht auf den Lichtzerhacker eingestellt 
-werden, sonder nur der Zerhacker auf den Selektivverstärker. Dies hat zur Folge, dass die Signale 
-nicht scharf gemessen werden können. Zudem sind die Signale der 
-Photodetektoren nicht in Phase. Folglich ist auf dem Oszillokop keine Nullline zur erkennen. Es kann 
-nur ein Minimum abgeschätz werden, da auch noch das Grundrauschen durch den nicht 
-eingeregelten Selektivverstärker dazu kommt. Dazu kann keine Wechselfeldmethode verwendet werden, da 
-der Magnet nicht umpolbar ist, dies ist problematisch, da die Differenz der Winkel nicht groß genug ist. 
-Zudem ist das Linsensystem nicht ausreichend zu justieren, so dass Intensität verloren geht 
-und je nach Probe und Wellenlänge unterschiedlich starke Signale ermöglicht. 
-Es lässt sich festhalten, dass die ermittelten Winkel mehr eine Abschatzung sind und einem vom 
-Versuchsaufbau gegebenen systematischen Fehler unterliegen, der sich stark auf das Auflösevermögen 
+Der verwendete Versuchsaufbau weist einige Fehler auf die besonders die gemessenen Winkel
+beeinflussen. Der Selektivverstärker kann nicht auf den Lichtzerhacker eingestellt
+werden, sonder nur der Zerhacker auf den Selektivverstärker. Dies hat zur Folge, dass die Signale
+nicht scharf gemessen werden können. Zudem sind die Signale der
+Photodetektoren nicht in Phase. Folglich ist auf dem Oszillokop keine Nullline zur erkennen. Es kann
+nur ein Minimum abgeschätz werden, da auch noch das Grundrauschen durch den nicht
+eingeregelten Selektivverstärker dazu kommt. Dazu kann keine Wechselfeldmethode verwendet werden, da
+der Magnet nicht umpolbar ist, dies ist problematisch, da die Differenz der Winkel nicht groß genug ist.
+Zudem ist das Linsensystem nicht ausreichend zu justieren, so dass Intensität verloren geht
+und je nach Probe und Wellenlänge unterschiedlich starke Signale ermöglicht.
+Es lässt sich festhalten, dass die ermittelten Winkel mehr eine Abschatzung sind und einem vom
+Versuchsaufbau gegebenen systematischen Fehler unterliegen, der sich stark auf das Auflösevermögen
 der kleinen Winkelunterschiede auswirkt.
 
 \subsection{Zur Faraday-Rotation an n-dotiertem und hochreinem GaAs}
-Verwunderlich ist, dass das hochreine GaAs im Vergleich zum $N= \SI{1.2e18}{\per\centi\meter}$ 
-n-dotiertem GaAs eine größere Farady-Rotation zeigt, da diese 
-proportional zur Zahl der freien Ladungsträger ist. Alle anderen Faktoren sind durch den 
-Versuchsaufbau gleich geblieben oder wurden bei dem Vergleich mitbetrachtet. Es lässt sich eine 
-Verwächselung der Daten unsererseits ausschließen. Deshalb liegt es nah, dass es vom Versuchsaufbau 
-her nicht möglich war beide Proben hinreichend genau zu untersuchen. Zudem war es besonders schwer 
+Verwunderlich ist, dass das hochreine GaAs im Vergleich zum $N= \SI{1.2e18}{\per\centi\meter}$
+n-dotiertem GaAs eine größere Farady-Rotation zeigt, da diese
+proportional zur Zahl der freien Ladungsträger ist. Alle anderen Faktoren sind durch den
+Versuchsaufbau gleich geblieben oder wurden bei dem Vergleich mitbetrachtet. Es lässt sich eine
+Verwächselung der Daten unsererseits ausschließen. Deshalb liegt es nah, dass es vom Versuchsaufbau
+her nicht möglich war beide Proben hinreichend genau zu untersuchen. Zudem war es besonders schwer
 bei der zuvor erwähnten Probe die Winkelunterschiede zu erkennen, dies wurde aber schon ausreichend in Kaptiel \ref{sec:Fehler} diskutiert.
 
-\subsection{Zur Bestimmung der effektiven Masse} 
-Um das Ergebnis mit dem Literaturwert $ m_{lit} ^* = 0.067 \cdot m_e$ aus Quelle \cite{effm} zu 
-vergleichen, wird zu erst der Mittelwert der zuvor bestimmten effektiven Massen, unter Zurhilfenahme 
+\subsection{Zur Bestimmung der effektiven Masse}
+Um das Ergebnis mit dem Literaturwert $ m_{lit} ^* = 0.067 \cdot m_e$ aus Quelle \cite{effm} zu
+vergleichen, wird zu erst der Mittelwert der zuvor bestimmten effektiven Massen, unter Zurhilfenahme
 von \cite{numpy} nach den Methoden von \cite{Tipler}, bestimmt. Es wurde verwedet:
 \begin{equation*}
-\bar{x} = \frac{1}{n} \sum_i x_i \qquad \text{und} \qquad 
-\Delta x = \sqrt{\frac{1}{n\left(n-1\right)} \sum_i ^n \left( x_i-\left<x\right>\right)^2 } \qquad . 
+\bar{x} = \frac{1}{n} \sum_i x_i \qquad \text{und} \qquad
+\Delta x = \sqrt{\frac{1}{n\left(n-1\right)} \sum_i ^n \left( x_i-\left<x\right>\right)^2 } \qquad .
 \end{equation*}
-Daraus folgt die Mittlere effektive Masse $\bar{m^*} = \SI{1.1(15)e-6} \cdot m_e$. Daraus folgt ein 
-relativer Fehler von \SI{99.998}{\percent}. So eine große Abweichung bestetigt die Annahme aus 
-Kapitel \ref{sec:Fehler}, dass hier nur eine grobe Abschätzung der Winkelunterschiede vorliegt. 
-In Kapitel \ref{sec:Auswertung} wurde dann zum Vergleich der längenomrierte Winkel betrachtet, 
-welcher durch die geringe Proben dicke sehr groß ausfällt. Folglich fallen dann auch bei kleinen 
-Winkelunterschieden große Werte an, somit scheint  auch eine große Abweichung von $ 10^{-3}$ 
-Größenordnungen nicht unwahrscheinlich bei den Gegebenheiten die in Kapitel \ref{sec:Fehler} 
-geschildert wurden. 
+Daraus folgt die Mittlere effektive Masse $\bar{m^*} = \SI{1.1(15)e-6} \cdot m_e$. Daraus folgt ein
+relativer Fehler von \SI{99.998}{\percent}. So eine große Abweichung bestetigt die Annahme aus
+Kapitel \ref{sec:Fehler}, dass hier nur eine grobe Abschätzung der Winkelunterschiede vorliegt.
+In Kapitel \ref{sec:Auswertung} wurde dann zum Vergleich der längenomrierte Winkel betrachtet,
+welcher durch die geringe Proben dicke sehr groß ausfällt. Folglich fallen dann auch bei kleinen
+Winkelunterschieden große Werte an, somit scheint  auch eine große Abweichung von $ 10^{-3}$
+Größenordnungen nicht unwahrscheinlich bei den Gegebenheiten die in Kapitel \ref{sec:Fehler}
+geschildert wurden.

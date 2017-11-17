@@ -1,0 +1,5 @@
+Starimpulse: 2102553
+Stoppimpulse: 15711
+
+Messzeit insgesamt: 83930 Sekunden
+Suchzeit Ts: 11,2 µs

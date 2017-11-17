@@ -48,22 +48,22 @@
 % \end{table}
 \subsection{Bestimmung der maximalen Kraftflussdichte des mag. Feldes}
 \label{sec:BFeld}
-Zur Bestimmung der maximalen Kraftflussdichte, wird zu erst die Kraftflussdichte in ein 
-Diagramm gegen die z-Position aufgetragen und dann mit einer Ausgleichskurve approximiert. 
-Die Ausgleichskurve wurde mit nicht-linearer Ausgleichsrechnung unter Zurhilfenahme von 
-\cite{scipy} und folgender Gaußfunktion bestimmt: 
+Zur Bestimmung der maximalen Kraftflussdichte, wird zu erst die Kraftflussdichte in ein
+Diagramm gegen die z-Position aufgetragen und dann mit einer Ausgleichskurve approximiert.
+Die Ausgleichskurve wurde mit nicht-linearer Ausgleichsrechnung unter Zurhilfenahme von
+\cite{scipy} und folgender Gaußfunktion bestimmt:
 \begin{equation*}
 	f(z)= \frac{A}{\sqrt{2\pi\sigma}}\cdot\exp\left(-\frac{1}{2} \left(\frac{z}{\sigma} \right) ^2 \right)
-\end{equation*} 
-Daraus ergibt sich, dass $A= \SI{0.0096(4)}{\tesla\meter}$ und $\sigma = \SI{0.0084(4)}{\meter}$ 
-betragen muss. An der Position der Probe ist die Kraftflussdichte maximal, also bei 
-$z =0$, folglich ergibt sich, dass  die maximale Kraftflussdichte $f(0) = \SI{0.45(2)}{\tesla}$ 
-beträgt. Das zuvor erwähnte Diagramm ist in der Abbildung \ref{fig:BFeld} zusehen, alle Werte 
+\end{equation*}
+Daraus ergibt sich, dass $A= \SI{0.0096(4)}{\tesla\meter}$ und $\sigma = \SI{0.0084(4)}{\meter}$
+betragen muss. An der Position der Probe ist die Kraftflussdichte maximal, also bei
+$z =0$, folglich ergibt sich, dass  die maximale Kraftflussdichte $f(0) = \SI{0.45(2)}{\tesla}$
+beträgt. Das zuvor erwähnte Diagramm ist in der Abbildung \ref{fig:BFeld} zusehen, alle Werte
 dazu sind in der Tabelle \ref{tab:BFeld} dargestellt.
  \begin{figure}
    \centering
    \includegraphics[height= 7cm]{plots/BFeld.pdf}
-   \caption{Magnetische Feldstärke parallel zum Strahlengang. Die Probe liegt im Zentrum, hier bei Null. Der Verlauf der mag. Feldstärke wurde mit einer Gaußfunktion approximiert.}
+   \caption{Magnetische Feldstärke parallel zum Strahlengang. Die Probe liegt im Zentrum, hier bei Null. Der Verlauf der Feldstärke wurde mit einer Gaußfunktion approximiert.}
    \label{fig:BFeld}
  \end{figure}
 
@@ -72,7 +72,7 @@ dazu sind in der Tabelle \ref{tab:BFeld} dargestellt.
    \sisetup{round-mode = places , round-precision = 3,scientific-notation=fixed, fixed-exponent = 0}
    \begin{tabular}{S S}
      \toprule
-      $\text{Feldstärke} B /\si{\tesla} $ & $z \text{-Position} / \si{\meter} $\\
+      $\text{Feldstärke\;} B /\si{\tesla} $ & $z \text{-Position} / \si{\meter} $\\
      \midrule
        8.799999999999999489e-02 & -1.400000000000000029e-02\\
        1.660000000000000087e-01 & -1.200000000000000025e-02\\
@@ -97,8 +97,8 @@ dazu sind in der Tabelle \ref{tab:BFeld} dargestellt.
   \end{table}
 
 \subsection{Faraday-Rotation an n-dotiertem und hochreinem GaAs}
-Zuerst wurden die längennormierten Winkel der Faraday-Rotation gegen die quadrierte Wellenlänge 
-aufgetragen, dies ist in der Abbildung \ref{fig:Vgl} zusehen. 
+Zuerst wurden die längennormierten Winkel der Faraday-Rotation gegen die quadrierte Wellenlänge
+aufgetragen, dies ist in der Abbildung \ref{fig:Vgl} zusehen.
 
 \begin{figure}
   \centering
@@ -108,50 +108,50 @@ aufgetragen, dies ist in der Abbildung \ref{fig:Vgl} zusehen.
 \end{figure}
 
 \subsection{Bestimmung der effektiven Masse}
-Zur Bestimmung der effektiven Masse der Elektronen in GaAs wurden zu erst 
-die Differenz der Längennomierten Faraday-Rotationen zwischen der hochreinen 
-Probe und den zwei n-dotierten gegen die quadrierte Wellenlänge aufgetragen. 
-Das ist in der Abbildung \ref{fig:Delta} festgehalten. 
-Dann wurde mit linearer Ausgleichsrechnung eine Ausgleichgerade durch den Nullpunkt bestimmt. 
-Dazu wurde die einfache Geraden Gleichung 
+Zur Bestimmung der effektiven Masse der Elektronen in GaAs wurden zuerst
+die Differenz der längennomierten Faraday-Rotationen zwischen der hochreinen
+Probe und den zwei n-dotierten gegen die quadrierte Wellenlänge aufgetragen.
+Das ist in der Abbildung \ref{fig:Delta} festgehalten.
+Dann wurde mit linearer Ausgleichsrechnung eine Ausgleichgerade durch den Nullpunkt bestimmt.
+Dazu wurde die einfache Geradengleichung
 \begin{equation*}
- f\left(x\right) = a \cdot x 
+ f\left(x\right) = a \cdot x +b
 \end{equation*}
-verwendet. Daraus ergibt sich für Differenz mit der $N = \SI{2.8e18}{\per\cubic\centi\meter}$ 
-n-dotierten Probe $a = \SI{9.1(26)e14}{\per\meter}$ und für die 
-$N = \SI{1.2e18}{\per\cubic\centi\meter}$ 
-n-dotierten Probe $a= \SI{3.3(15)e14}{\per\meter}$. Aus der Gleichung \eqref{eq:Winkelfrei} 
+verwendet. Daraus ergibt sich für Differenz mit der $N = \SI{2.8e18}{\per\cubic\centi\meter}$
+n-dotierten Probe $a = \SI{9.1(26)e14}{\per\meter}$ und für die
+$N = \SI{1.2e18}{\per\cubic\centi\meter}$
+n-dotierten Probe $a= \SI{3.3(15)e14}{\per\meter}$. Aus der Gleichung \eqref{eq:Winkelfrei}
 folgt dann für die effektive Masse:
- 
+
 \begin{equation}
 m^* = \sqrt{\frac{\symup{e}_0 ^3 N B}{8\pi^2 \epsilon_0 \symup{c}^3 n a}} \qquad .
-\end{equation} 
+\end{equation}
 
-Hier bei ist $\symup{e}_0$ die Elementarladung , $\symup{c}$ die Lichtgeschwindigkeit 
-und $\epsilon_0$ die elektrische Feldkonstante, alle 
-physikalischen Konstanten wurden zur Berechnung aus \cite{scipy} importiert. Die Größe $N$ 
-bezeichnet die freien Ladungsträger pro Kubikzentimeter in den n-dotierten Proben, $B$ bezeichnet 
-die magnetische Feldstärke die in Kapitel \ref{sec:BFeld} bestimmt wurde. 
-Die Größe $n$ ist der Brechungsindex für GaAs, dieser wurde mit 3.3543 für eine Wellenlänge 
-von \SI{1771.14}{\nano\meter} angenommen, da der Mittelwert der von uns benutzten Wellenlängen bei 
-\SI{1.8}{\micro\meter} liegt. 
+Hier bei ist $\symup{e}_0$ die Elementarladung, $\symup{c}$ die Lichtgeschwindigkeit
+und $\epsilon_0$ die elektrische Feldkonstante, alle
+physikalischen Konstanten wurden zur Berechnung aus \cite{scipy} importiert. Die Größe $N$
+bezeichnet die freien Ladungsträger pro Kubikzentimeter in den n-dotierten Proben, $B$ bezeichnet
+die magnetische Feldstärke die in Kapitel \ref{sec:BFeld} bestimmt wurde.
+Die Größe $n$ ist der Brechungsindex für GaAs, dieser wurde mit 3,3543 für eine Wellenlänge
+von \SI{1771.14}{\nano\meter} angenommen, da der Mittelwert der von uns benutzten Wellenlängen bei
+\SI{1.8}{\micro\meter} liegt.
 Der Brechungsindex wurde aus Quelle \cite{BIndex} entnommen.
-Dann ergibt sich für die effektive Masse für die 
-$N = \SI{2.8e18}{\per\cubic\centi\meter}$ 
-n-dotierten Probe $m_1 ^* = \SI{1.0(15)e-6}{\per\meter}\cdot m_e$ und 
-für die $N = \SI{1.2e18}{\per\cubic\centi\meter}$ 
-n-dotierten Probe $m_2 ^* = \SI{1.1(26)e-6}{\per\meter}\cdot m_e$, hier bezeichnet $m_e$ die 
-Elektronenmasse importiert aus \cite{scipy}. Der Fehler der effektiven Massen wurde wie folgt 
-bestimmt: 
+Dann ergibt sich für die effektive Masse für die
+$N = \SI{2.8e18}{\per\cubic\centi\meter}$
+n-dotierten Probe $m_1 ^* = \SI{1.0(15)e-6}{\per\meter}\cdot m_e$ und
+für die $N = \SI{1.2e18}{\per\cubic\centi\meter}$
+n-dotierten Probe $m_2 ^* = \SI{1.1(26)e-6}{\per\meter}\cdot m_e$, hier bezeichnet $m_e$ die
+Elektronenmasse importiert aus \cite{scipy}. Der Fehler der effektiven Massen wurde wie folgt
+bestimmt:
 \begin{equation*}
-\Delta m^*= \sqrt{\left(\frac{\partial m^*\left(a,B\right)}{\partial a} \Delta a\right)^2 + \left(\frac{\partial m^*\left(a,B\right)}{\partial B} \Delta B\right)^2} \qquad . 
+\Delta m^*= \sqrt{\left(\frac{\partial m^*\left(a,B\right)}{\partial a} \Delta a\right)^2 + \left(\frac{\partial m^*\left(a,B\right)}{\partial B} \Delta B\right)^2} \qquad .
 \end{equation*}
-Methoden zur Fehlerrechnung aus \cite{Tipler}. Alle Werte dazu sind in den Tabellen \ref{tab:HGaAstab} 
+Alle Werte dazu sind in den Tabellen \ref{tab:HGaAstab},
 \ref{tab:1.nGaAstab} und \ref{tab:2.nGaAstab} dargestellt.
 \begin{figure}
   \centering
   \includegraphics[height=7cm]{plots/DeltaTheta.pdf}
-  \caption{Differenzen der längennormierten Faraday-Rotationen zwischen der hochreinen und den 
+  \caption{Differenzen der längennormierten Faraday-Rotationen zwischen der hochreinen und den
 zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
   \label{fig:Delta}
 \end{figure}
@@ -161,7 +161,7 @@ zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
   \sisetup{round-mode = places , round-precision = 2}
   \begin{tabular}{S[scientific-notation=fixed, fixed-exponent =-6] S[scientific-notation=fixed, fixed-exponent = 0] S[scientific-notation=fixed, fixed-exponent = 0]}
     \toprule
-    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation} \frac{\theta}{d=\SI{5.11}{\milli\meter}} / \si{\degree\per\meter}$ \\
+    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation\;} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation\;} \frac{\theta}{d=\SI{5.11}{\milli\meter}} / \si{\degree\per\meter}$ \\
     \midrule
     1.959999999999999869e-06&3.033333333333331439e+00&5.936073059360726347e+02\\
     1.719999999999999837e-06&4.799999999999997158e+00&9.393346379647742879e+02\\
@@ -183,7 +183,7 @@ zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
   \sisetup{round-mode = places , round-precision = 2}
   \begin{tabular}{S[scientific-notation=fixed, fixed-exponent =-6] S[scientific-notation=fixed, fixed-exponent = 0] S[scientific-notation=fixed, fixed-exponent = 0]}
     \toprule
-	    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation} \frac{\theta}{d=\SI{1.296}{\milli\meter}} / \si{\degree\per\meter}$ \\
+	    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation\;} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation\;} \frac{\theta}{d=\SI{1.296}{\milli\meter}} / \si{\degree\per\meter}$ \\
     \midrule
     2.156000000000000195e-06 & 6.750000000000000000e+00 & 5.208333333333333030e+03\\
     1.289999999999999931e-06 & 1.311666666666666003e+01 & 1.012088477366254665e+04\\
@@ -204,7 +204,7 @@ zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
  \sisetup{round-mode = places , round-precision = 2}
  \begin{tabular}{S[scientific-notation=fixed, fixed-exponent =-6] S[scientific-notation=fixed, fixed-exponent = 0] S[scientific-notation=fixed, fixed-exponent = 0]}
    \toprule
-   $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation} \frac{\theta}{d=\SI{1.36}{\milli\meter}} / \si{\degree\per\meter}$ \\
+   $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation\;} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation\;} \frac{\theta}{d=\SI{1.36}{\milli\meter}} / \si{\degree\per\meter}$ \\
 
    \midrule
     2.156000000000000195e-06 & 4.000000000000000000e+00 & 2.941176470588235361e+02\\
@@ -220,4 +220,3 @@ zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
   \caption{Werte des \texorpdfstring{$N = \SI{1.2e18}{\per\cubic\centi\meter}$}{math} n-dotierten GaAs im Überblick.}
   \label{tab:2.nGaAstab}
 \end{table}
-
