@@ -50,20 +50,21 @@
 \label{sec:BFeld}
 Zur Bestimmung der maximalen Kraftflussdichte, wird zu erst die Kraftflussdichte in ein
 Diagramm gegen die z-Position aufgetragen und dann mit einer Ausgleichskurve approximiert.
-Die Ausgleichskurve wurde mit nicht-linearer Ausgleichsrechnung unter Zurhilfenahme von
-\cite{scipy} und folgender Gaußfunktion bestimmt:
+Die Ausgleichskurve wurde mit nicht-linearer Ausgleichsrechnung unter Zuhilfenahme von
+\cite{scipy} und folgender Funktion bestimmt:
 \begin{equation*}
-	f(z)= \frac{A}{\sqrt{2\pi\sigma}}\cdot\exp\left(-\frac{1}{2} \left(\frac{z}{\sigma} \right) ^2 \right)
+	f(z)= A \cdot z^2 + B
 \end{equation*}
-Daraus ergibt sich, dass $A= \SI{0.0096(4)}{\tesla\meter}$ und $\sigma = \SI{0.0084(4)}{\meter}$
+Daraus ergibt sich, dass $A= \SI{-1.84(7)}{\tesla\per\square\meter}$ und 
+$B = \SI{0.436(8)}{\tesla}$
 betragen muss. An der Position der Probe ist die Kraftflussdichte maximal, also bei
-$z =0$, folglich ergibt sich, dass  die maximale Kraftflussdichte $f(0) = \SI{0.45(2)}{\tesla}$
+$z =0$, folglich ergibt sich, dass  die maximale Kraftflussdichte $f(0) =B= \SI{0.436(8)}{\tesla}$
 beträgt. Das zuvor erwähnte Diagramm ist in der Abbildung \ref{fig:BFeld} zusehen, alle Werte
 dazu sind in der Tabelle \ref{tab:BFeld} dargestellt.
  \begin{figure}
    \centering
    \includegraphics[height= 7cm]{plots/BFeld.pdf}
-   \caption{Magnetische Feldstärke parallel zum Strahlengang. Die Probe liegt im Zentrum, hier bei Null. Der Verlauf der Feldstärke wurde mit einer Gaußfunktion approximiert.}
+   \caption{Magnetische Feldstärke parallel zum Strahlengang. Die Probe liegt im Zentrum, hier bei Null. Der Verlauf der Feldstärke wurde mit einer Parabel approximiert.}
    \label{fig:BFeld}
  \end{figure}
 
@@ -106,21 +107,25 @@ aufgetragen, dies ist in der Abbildung \ref{fig:Vgl} zusehen.
   \caption{Die Längennormierte Farady-Rotation aller GaAs-Proben im Vergleich.}
   \label{fig:Vgl}
 \end{figure}
-
+\FloatBarrier
 \subsection{Bestimmung der effektiven Masse}
 Zur Bestimmung der effektiven Masse der Elektronen in GaAs wurden zuerst
 die Differenz der längennomierten Faraday-Rotationen zwischen der hochreinen
 Probe und den zwei n-dotierten gegen die quadrierte Wellenlänge aufgetragen.
 Das ist in der Abbildung \ref{fig:Delta} festgehalten.
-Dann wurde mit linearer Ausgleichsrechnung eine Ausgleichgerade durch den Nullpunkt bestimmt.
+Dann wurde mit linearer Ausgleichsrechnung eine Ausgleichgerade bestimmt.
 Dazu wurde die einfache Geradengleichung
 \begin{equation*}
  f\left(x\right) = a \cdot x +b
 \end{equation*}
 verwendet. Daraus ergibt sich für Differenz mit der $N = \SI{2.8e18}{\per\cubic\centi\meter}$
-n-dotierten Probe $a = \SI{9.1(26)e14}{\per\meter}$ und für die
+n-dotierten Probe $a = \SI{1(5)e14}{\per\cubic\meter}$, $b=\SI{3.7(19)e3}{\per\meter}$ und für die
 $N = \SI{1.2e18}{\per\cubic\centi\meter}$
-n-dotierten Probe $a= \SI{3.3(15)e14}{\per\meter}$. Aus der Gleichung \eqref{eq:Winkelfrei}
+n-dotierten Probe $a= \SI{0.2(27)e14}{\per\cubic\meter}$,$b=\SI{5(6)e2}{\per\meter}$.
+Für die $N = \SI{1.2e18}{\per\cubic\centi\meter}$ Probe mussten Werte aus der Ausgleichrechnung 
+genommen werden, da diese zu stark von den anderen abwichen. Die Werte sind in der Abbildung 
+\ref{fig:Delta} markiert.
+Aus der Gleichung \eqref{eq:Winkelfrei}
 folgt dann für die effektive Masse:
 
 \begin{equation}
@@ -132,15 +137,15 @@ und $\epsilon_0$ die elektrische Feldkonstante, alle
 physikalischen Konstanten wurden zur Berechnung aus \cite{scipy} importiert. Die Größe $N$
 bezeichnet die freien Ladungsträger pro Kubikzentimeter in den n-dotierten Proben, $B$ bezeichnet
 die magnetische Feldstärke die in Kapitel \ref{sec:BFeld} bestimmt wurde.
-Die Größe $n$ ist der Brechungsindex für GaAs, dieser wurde mit 3,3543 für eine Wellenlänge
+Die Größe $n$ ist der Brechungsindex für GaAs, dieser wurde mit 3,35 für eine Wellenlänge
 von \SI{1771.14}{\nano\meter} angenommen, da der Mittelwert der von uns benutzten Wellenlängen bei
 \SI{1.8}{\micro\meter} liegt.
 Der Brechungsindex wurde aus Quelle \cite{BIndex} entnommen.
 Dann ergibt sich für die effektive Masse für die
 $N = \SI{2.8e18}{\per\cubic\centi\meter}$
-n-dotierten Probe $m_1 ^* = \SI{1.0(15)e-6}{\per\meter}\cdot m_e$ und
+n-dotierten Probe $m_1 ^* = \SI{3(7)e-6}{\per\meter}\cdot m_e$ und
 für die $N = \SI{1.2e18}{\per\cubic\centi\meter}$
-n-dotierten Probe $m_2 ^* = \SI{1.1(26)e-6}{\per\meter}\cdot m_e$, hier bezeichnet $m_e$ die
+n-dotierten Probe $m_2 ^* = \SI{0.4(22)e-6}{\per\meter}\cdot m_e$, hier bezeichnet $m_e$ die
 Elektronenmasse importiert aus \cite{scipy}. Der Fehler der effektiven Massen wurde wie folgt
 bestimmt:
 \begin{equation*}
@@ -183,7 +188,7 @@ zwei n-dotierten Proben, aufgetragen gegen die quadrierte Wellenlänge.}
   \sisetup{round-mode = places , round-precision = 2}
   \begin{tabular}{S[scientific-notation=fixed, fixed-exponent =-6] S[scientific-notation=fixed, fixed-exponent = 0] S[scientific-notation=fixed, fixed-exponent = 0]}
     \toprule
-	    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation\;} \theta / \si{\degree}$ &$ \text{Längenormierte Faraday-Rotation\;} \frac{\theta}{d=\SI{1.296}{\milli\meter}} / \si{\degree\per\meter}$ \\
+	    $\text{Wellenlänge} \lambda / \si{\meter}$ & $ \text{Faraday-Rotation\;} \theta / \si{\degree}$ &$ \text{Längennormierte Faraday-Rotation\;} \frac{\theta}{d=\SI{1.296}{\milli\meter}} / \si{\degree\per\meter}$ \\
     \midrule
     2.156000000000000195e-06 & 6.750000000000000000e+00 & 5.208333333333333030e+03\\
     1.289999999999999931e-06 & 1.311666666666666003e+01 & 1.012088477366254665e+04\\
