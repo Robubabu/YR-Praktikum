@@ -31,7 +31,7 @@ Nmean=205 #fehlerbalken
 # np.savetxt('tab.txt',np.column_stack([x,y]), delimiter=' & ',newline= r'\\'+'\n' )
 #plt.subplot(1, 2, 1)
 plt.errorbar(t, N,yerr=errN, fmt='kx', label='Messdaten')
-plt.xlabel(r'$T \:/\: s$')
+plt.xlabel(r'$T \:/\: ns$')
 plt.ylabel(r'Counts$ \:/\: 10s$')
 plt.xlim(-18,25)
 plt.plot((-6, 16), (Nmean,Nmean), 'r-', label='Plateau')
