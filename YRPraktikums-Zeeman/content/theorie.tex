@@ -1,3 +1,169 @@
 \section{Theorie}
 \label{sec:Theorie}
-
+\subsection{Das magnetische Moment}
+Das Elektron hat neben dem Bahndrehimpuls $\vec{l}$ einen weiteren Drehimpuls den Spin $\vec{s}$.\\
+Durch die beschleunigte Ladung des Elektron ergibt sich ein Zusammenhang mit dem magnetische Moment. So lässt sich das
+Bohrsche Magneton
+\begin{equation}
+  \symup{\mu_\symup{B}} \coloneq -\frac{1}{2}\hbar\frac{\symup{e_0}}{\symup{m_0}}
+\end{equation}
+definieren.\\
+Damit lassen sich die magnetischen Momente für den Spin $\mu_s$ und den Bahndrehimpuls $\mu_l$ wie folgt berechnen:
+\begin{align}
+  \vec{\mu_l} &= - \symup{\mu_\symup{B}}\sqrt{l(l+1)}\vec{e}_l\\
+  \vec{\mu_s} &=-\symup{g_\symup{s}} \symup{\mu_\symup{B}}\sqrt{s(s+1)}\vec{e}_s \label{eq:muspin}
+\end{align}
+In \ref{eq:muspin} wird der sogenannte Landé-Faktor $\symup{g_\symup{s}}\approx 2$ eigeführt.
+\subsection{Wechselwirkung der Drehimpulse}
+Bei Atomen muss unterschieden werden, ob die Bahndrehimpulse und magnetischen Momente der einzelnen Elektronen
+ untereinander wechselwirken oder diese zwischen den verschiedenen Elektronen in Wechselwirkung treten.\\
+Eine vereinfachende Einteilung gelingt über die Kernladungszahl $Z$ der Atome.
+Für Atome mit hoher Kernladungszahl ist die Wechselwirkung zwischen Spin und Bahndrehimpuls des Einzelelektrons
+so groß, dass sich die Komponenten wie folgt zusammensetzten:
+\begin{equation}
+  \vec{j}_i= \vec{l}_i+ \vec{s}_i .
+\end{equation}
+Damit lässt sich ein Gesamtdrehimpuls
+\begin{equation}
+  \vec{J}=\sum_{i=1}^{Z} \vec{j}_i
+\end{equation}
+berechnen. Dies wird als j-j-Kopplung bezeichnet. Zwischen diesem Spezialfall und dem im
+ Folgenden beschriebenen besteht ein fließender Übergang.\\
+\\Bei niedriger Kernladungszahl lassen sich die Bahndrehimpulse zu einem Gesamtdrehimpuls
+\begin{equation}
+  \vec{L}=\sum_{i=1}^{Z} \vec{l}_i , \qquad \text{mit } |{\vec{L}}| =\sqrt{L(L+1)}\hbar
+\end{equation}
+zusammenfassen.
+Dasselbe gilt für den Gesamtspin
+\begin{equation}
+  \vec{S}=\sum_{i=1}^{Z} \vec{s}_i , \qquad \text{mit } |{\vec{S}}|=\sqrt{S(S+1)}\hbar.
+\end{equation}
+Dazu gehören die folgenden magnetische Momente:
+\begin{align*}
+  |{\vec{\mu}}_\symup{L}|&=\symup{\mu_B}\sqrt{L(L+1)}\\
+  |{\vec{\mu}}_\symup{S}|&=\symup{g_\symup{S}}\symup{\mu_B}\sqrt{S(S+1)}.
+\end{align*}
+Die Summendrehimpulse $\vec{L}$ und $\vec{S}$ lassen sich zu einem Gesamtdrehimpuls
+\begin{equation}
+  \vec{J}= \vec{L}+\vec{S} , \qquad \text{mit } |{\vec{J}}|=\sqrt{J(J+1)}\hbar.
+\end{equation}
+zusammenfassen, wenn kein zu großes externes Magnetfeld anliegt.
+Die hier beschriebene LS-Kopplung liegt dem Zeeman-Effekt zugrunde.\\
+Die Drehimpulsquantenzahl $J$ kann entweder ganz oder halbzahlig sein, da $L$ ganzzahlig ist und $S$ halbzahlig
+sein kann. Mit diesen drei Quantenzahlen lassen sich die Energieniveaus beschreiben. Der Drehimpulsquantenzahl $L$
+werden die Bezeichnungen S($L=0$), P($L=1$), D($L=2$) und F($L=3$) und zugeordnent. Die Gesamtdrehimpulsquantenzahl $J$
+wird als unterer Index und die Multiplizität $M=2S+1$ oben links an die S,P,D,F - Terme geschrieben.
+\subsection{Energieaufspaltung}
+Für den mittels LS-Kopplung entstandenen Gesamtdrehimpuls kann nun ein magnetisches Moment
+\begin{equation}
+  \vec{\mu}=\vec{\mu_\symup{L}}+\vec{\mu_\symup{L}}
+\end{equation}
+definiert werden.
+Dabei ist anzumerken, dass die Richtungen von $\vec{J}$ und $\vec{\mu}$ nicht umbedingt zusammenfallen.\\
+Der Landé-Faktor lässt sich mittels
+\begin{equation}
+  \symup{g_\symup{J}}=\frac{3J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}
+  \label{eq:Lande}
+\end{equation}
+bestimmen.\\
+Aus der Quantenmechanik folgt, dass nur solche Winkel zwischen $\vec{\mu}$ und
+$\vec{B}$ erlaubt sind, bei denen die Komponenten von $\mu_{J_z}$ in Feldrichtung ein ganzzahliges Vielfaches von
+$symup{g_\symup{J}}\symup{\mu_\symup{B}}$ sind. Dies wird Richtungsquantelung genannt.\\
+Die Ganzzahligkeit von
+\begin{equation}
+  \mu_{J_z}=-m\symup{g_J}\symup{\mu_B}.
+\end{equation}
+ wird durch die Orientierungsquantenzahl
+\begin{equation*}
+  m=-J,-J+1,\dots,1,\dots, J
+\end{equation*}
+sichergestellt.\\
+Mit diesenen Definitionen ist es nun möglich einen Ausdruck für die vom Magnetfeld übertragene Energie
+zu bestimmen:
+\begin{align}
+  E_{\text{mag}}&=-\vec{\mu}_\symup{J} \cdot {\vec{B}}\\
+                &=m\symup{g_J}\symup{\mu_B}\vec{B}.
+\end{align}
+Dies bedeutet, dass sich das Energieniveau $E_0$ eines Atoms beim Einschalten eines Magnetfeldes
+in $2J+1$ äquidistante Niveaus aufspaltet. Die Anzahl der Aufspaltungen folgt gewissen Auswahlregeln.
+\subsection{Auswahlregeln}
+Zur Herleitung der Auswahlregeln wird mit der Schrödinger-Gleichung
+\begin{equation}
+  -\frac{\hbar^2}{2m}\Delta \Psi\left(\vec{r},t\right) + U  \Psi\left(\vec{r},t\right) + \frac{\hbar}{\symup{i}} \frac{\partial}{\partial t}  \Psi\left(\vec{r},t\right)=0.
+  \label{eq:Schroedinger}
+\end{equation}
+und einer ebenen Welle
+\begin{equation}
+  \Psi_i \left(\vec{r},t\right)=\Psi_i \left(\vec{r}=0,t=0\right)\exp\left(-\frac{\symup{i}}{\hbar}E_i t\right).
+\end{equation}
+als Lösung von \ref{eq:Schroedinger} begonnen.\\
+Es wird nun eine Superposition $\Psi_{\text{ges}}$ zweier Lösungen von
+ \ref{eq:Schroedinger} mit $i=\alpha$ und $i=\beta$  betrachtet.
+Die zeitabhängige Dichteverteilung
+\begin{align}
+\begin{split}
+  \int \Psi^{*}_{\text{ges}}\Psi_{\text{ges}} &=
+  \int \Big(
+   C^2_{\alpha} \Psi^{*}_{\alpha} \Psi_{\alpha}+
+   C^2_{\alpha} \Psi^{*}_{\beta} \Psi_{\beta}
+   +C_{\alpha} C_{\beta} \Psi^{*}_{\alpha} \Psi_{\beta} \exp \left(\frac{\symup{i}}{\hbar}\left(E_{\alpha}-E_{beta}\right) t \right) \\
+   &+C_{\beta} C_{\alpha} \Psi^{*}_{\beta} \Psi_{\alpha} \exp \left(\frac{\symup{i}}{\hbar}\left(E_{\alpha}-E_{beta}\right) t \right)
+   \Big) \symup{dV}
+  \label{eq:kackscheiß}
+\end{split}
+\end{align}
+beschreibt das Schwingen eines Elektrons mit der Frequenz
+\begin{equation}
+  \nu_{\alpha \beta}= \frac{E_{\alpha}-E_{\beta}}{\symup{h}} .
+\end{equation}
+Es lässt sich also ein Ausdruck für einen beliebig Orientierten Dipol bestimmen. Für die Raumkompnenten $i=x,y,z$
+ergibt sich:
+\begin{equation}
+  D_i=-\symup{e}_0 \symup{const} 2 \symup{Re}\left(\int i \Psi^{*}_{\beta} \Psi_{\alpha} \symup{dV} \exp \left( 2 \pi \symup{i} \nu_{\alpha \beta} t \right) \right)
+\label{eq:Dipol}
+\end{equation}
+Die Integrale
+\begin{equation*}
+  i_{\alpha \beta}= \int i \Psi^{*}_{\beta} \Psi_{\alpha} \symup{dV}
+\end{equation*}
+beschreiben als Matrixelemente die Strahlungsemission.
+Das betrachtete Magnetfeld soll in z-Richtung liegen.
+ Dann ergibt sich mit dem Ansatz für die Wellenfunktion eines Atoms
+ $\psi=\frac{1}{\sqrt{2 \pi}}R(r)\Theta(\theta)\exp(\symup{i}m\phi)$ im Magnetfeld für
+\begin{equation}
+  z_{\alpha \beta}=\frac{1}{2\pi}\int_0^{\infty} R_{\alpha}(r)R_{\beta}(r)r^3\symup{dr}
+  \int_0^{\pi} \Theta_{\alpha} \Theta_{\beta} \sin \theta \cos \theta \symup{d\theta}
+  \int_0^{2\pi} \exp\left(\symup{i}\left(m_{\alpha}-m_{\beta}\right)\phi \right) \symup{d\phi} .
+\label{eq:Dipolz}
+\end{equation}
+Damit in \ref{eq:Dipolz} das letzte Integral nicht verschwindet muss $m_{\alpha}=m_{\beta}$ gelten.
+Die Orientierungsquantenzahl muss also bei beiden Zuständen gleich sein.\\
+Der Dipol schwingt also in Feldrichtung und seine stärkste Emission ist senkrecht dazu. Die Strahlung
+ist also linear in $\vec{B}$-Richtung polarisiert. Diese Übergänge werden als $\pi$-Komponente des Zeeman-Tripletts bezeichnet.\\
+\\Für die x- und y-Komponenten ergeben sich zu \ref{eq:Dipolz} analoge Terme . Betrachtet man die Gleichungen
+\begin{equation}
+    x_{\alpha \beta}\pm \symup{i} y_{\alpha \beta}=
+    \frac{1}{2\pi}\int_0^{\infty} R_{\alpha}(r)R_{\beta}(r)r^3\symup{dr}
+    \int_0^{\pi} \Theta_{\alpha} \Theta_{\beta} \sin^2 \theta \symup{d\theta}
+    \int_0^{2\pi} \exp\left(\symup{i}\left(m_{\alpha}-m_{\beta} \pm 1\right)\phi \right) \symup{d\phi}
+\end{equation}
+erkennt man mit der selben Begründung wie oben, dass die weiteren Auswahlregeln durch
+\begin{align*}
+  m_{\beta}&=m_{\alpha}+1\\
+  m_{\beta}&=m_{\alpha}-1
+\end{align*}
+gegen sind.\\
+Damit ergibt sich, dass $x_{\alpha \beta}$ und $y_{\alpha \beta}$ bis auf ein eine Phasenverschiebung von $\pm \frac{\pi}{2}$ gleich sind.
+Es tritt also eine zirkular-polarisierte Schwingung auf. Diese Übergänge werden als $\sigma$-Komponenten des Zeeman-Tripletts bezeichnet.
+\subsection{Der normale und annormale Zeeman-Effekt}
+Aus historischen Gründen wird der Spezialfall $S=0$ \textbf{normaler Zemann-Effekt} genannt.\\
+Für den Landé-Faktor gilt in diesem Fall nach \ref{eq:Lande} $\symup{g_\symup{J}}=1$ also ist die Aufspaltung Energieniveaus immer
+\begin{equation}
+  \Delta E=m\symup{\mu_{B}}B, \qquad \text{mit } -J \leq m \leq J .
+\end{equation}
+  Der \textbf{annormale Zeeman-Effekt} tritt auf, wenn der Elektronenspin mitbetrachtet wird, also wenn $S\neq 0$ gilt.
+  Damit hängt der Landé-Faktor von L,S und J ab. Die Energieaufspaltung wird dann mit
+  \begin{equation}
+    \Delta E=\symup{g}_{ij} \symup{\mu_{B}}B, \qquad \text{mit } \symup{g}_{ij}=m_i\symup{g}_{i}- m_j\symup{g}_{j}.
+  \end{equation}
+  berechnet.
