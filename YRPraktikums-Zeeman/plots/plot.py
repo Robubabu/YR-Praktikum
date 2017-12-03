@@ -33,18 +33,17 @@ for p in params:
 a = params[0]
 b = params[1]
 
-##Tabelle
-## np.savetxt('tab.txt',np.column_stack([x,y]), delimiter=' & ',newline= r'\\'+'\n' )
-
-#plt.plot(If,Bf ,'ro', label='Linearer Teil der Hyysteresekurve')
-#plt.plot(Ip,Bp ,'kx', label='Nicht-linearer Teil der Hysteresekurve')
-#plt.plot(x, f(x,noms(a),noms(b)), 'b-', label= 'Ausgleichsgerade')
-#plt.xlim(0,21)
-#plt.xlabel(r'$Feldstrom \; I \:/\: A$')
-#plt.ylabel(r'$Magnetische Feldstärke \; B \:/\: mT$')
-#plt.legend(loc='best')
-##plt.show()
-#plt.savefig('BFeldplot.pdf')
+plt.plot(Iu,Bu, 'gx', label= 'Absteigende Hysteresekurve')
+plt.plot(If,Bf ,'rx', label='Aufsteigende Hyysteresekurve')
+plt.plot(Ip,Bp ,'kx', label='Nicht-lin. Teil der aufsteig. Hysteresekurve')
+plt.plot(x, f(x,noms(a),noms(b)), 'b-', label= 'Ausgleichsgerade d. linearen Teils')
+plt.xlim(0,21)
+plt.ylim(0,1500)
+plt.xlabel(r'$Feldstrom \; I \:/\: A$')
+plt.ylabel(r'$Magnetische Feldstärke \; B \:/\: mT$')
+plt.legend(loc='best')
+#plt.show()
+plt.savefig('BFeldplot.pdf')
 
 # del lambda funktion:
 def dl(ds,Ds,Dl):
@@ -128,5 +127,9 @@ print(" Gangunterschied für P=90:", Dsb2)
 print(" del s der Auspaltung für P =90", dsb2)
 print("BFeld der Aufspaltung für P = 0:",0.981)
 print(" del Lambda für P=90:", dl2)
-print(" gij Faktor für P =90:", gij(0.981, 480e-9,dl2))
 print("Relativer Fehler von Erwartungswert 0.5:", relf(0.5, gij(0.981, 480e-9,dl2)))
+print(" gij Faktor für P =90:", gij(0.981, 480e-9,dl2))
+
+##Tabelle
+## np.savetxt('tab.txt',np.column_stack([x,y]), delimiter=' & ',newline= r'\\'+'\n' )
+
