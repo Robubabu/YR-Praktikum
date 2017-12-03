@@ -65,6 +65,7 @@ Dsr = np.empty(0)
 q = range(len(r[1:]))
 for i in q:
 	Dsr= np.append(Dsr,[r[i+1]-r[i]])
+DS1=Dsr
 Dsr = mittel(Dsr)
 # Berechnung del s
 dsr = np.array(r2-r1)
@@ -97,12 +98,14 @@ Dsb1 = np.empty(0)
 g = range(len(b1[:-1]))
 for i in g:
 	Dsb1 = np.append(Dsb1,b1[i+1]-b1[i])
+DS2 = Dsb1
 Dsb1 = mittel(Dsb1)
 #Berechnung von Dekta s für P = 90
 Dsb2 = np.empty(0)
 g = range(len(b2[:-1]))
 for i in g:
 	Dsb2 = np.append(Dsb2, b2[i+1] - b2[i])
+DS3= Dsb2
 Dsb2 = mittel(Dsb2)
 #Berechnung von del s für P = 0
 dsb1 = bn2 -bn1
@@ -131,5 +134,13 @@ print("Relativer Fehler von Erwartungswert 0.5:", relf(0.5, gij(0.981, 480e-9,dl
 print(" gij Faktor für P =90:", gij(0.981, 480e-9,dl2))
 
 ##Tabelle
-## np.savetxt('tab.txt',np.column_stack([x,y]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('rotP0PPtab.txt',np.column_stack([r]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('rotP0DStab.txt',np.column_stack([DS1]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('rotP0PtPtab.txt',np.column_stack([r1,r2,r2-r1]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP0PPtab.txt',np.column_stack([b1]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP0DStab.txt',np.column_stack([DS2]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP0PtPtab.txt',np.column_stack([bn1,bn2,bn2-bn1]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP90PPtab.txt',np.column_stack([b2]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP90DStab.txt',np.column_stack([DS3]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('blauP90PtPtab.txt',np.column_stack([ba1,ba2,ba2-ba1]), delimiter=' & ',newline= r'\\'+'\n' )
 
