@@ -51,6 +51,9 @@ def dl(ds,Ds,Dl):
 # gij funktion:
 def gij(B,l,dl):
 	return (h*c/l**2) * (1/(mhub*B)) * dl
+# energie fkt:
+def E(l,dl):
+	return h *c * dl/l**2
 #rote werte 
 #ohne pol
 r = np.genfromtxt('644nm_B=0_P=0.txt', unpack = True)
@@ -80,6 +83,7 @@ print(" del s der Auspaltung", dsr)
 print("BFeld der Aufspaltung:", Bra)
 print(" del Lambda:", dlr)
 print(" gij Faktor:", gij(Bra*10**-3, 643.8e-9,dlr))
+print("Energie:",E(643.8e-9,dlr/const.e))
 print("Relativer Fehler von Erwartungswert 1:", relf(1,gij(Bra*10**-3, 643.8e-9,dlr)))
 
 #blau 480nm
@@ -124,12 +128,14 @@ print(" Gangunterschied für P= 0:", Dsb1)
 print(" del s der Auspaltung für P = 0", dsb1)
 print("BFeld der Aufspaltung für P = 0:", Bn)
 print(" del Lambda für P= 0:", dl1)
+print("Energie für P=0:",E(480e-9,dl1)/const.e)
 print(" gij Faktor für P = 0:", gij(Bn, 480e-9,dl1))
 print("Relativer Fehler von Erwartungswert 1.75:", relf(1.75,gij(Bn, 480e-9,dl1)))
 print(" Gangunterschied für P=90:", Dsb2)
 print(" del s der Auspaltung für P =90", dsb2)
 print("BFeld der Aufspaltung für P = 0:",0.981)
 print(" del Lambda für P=90:", dl2)
+print("Energie für P=0:",E(480e-9,dl2)/const.e)
 print("Relativer Fehler von Erwartungswert 0.5:", relf(0.5, gij(0.981, 480e-9,dl2)))
 print(" gij Faktor für P =90:", gij(0.981, 480e-9,dl2))
 
