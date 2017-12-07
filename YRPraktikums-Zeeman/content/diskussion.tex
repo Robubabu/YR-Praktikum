@@ -1,9 +1,32 @@
 \section{Diskussion}
 \label{sec:Diskussion}
-\subsection{Relativer Fehler}
-Alle relativen Fehler wurden nach der Formel
-\begin{equation*}
-  \tilde{x} = \frac{ \lvert x_{lit} - x_{mess} \rvert}{\lvert x_{lit} \rvert}
-  \cdot 100 \%
-\end{equation*}
-berechnet, dabei bezeichnet $x_{lit}$ den Literaturwert der Messgröße $x_{mess}$.
+Alle Messergebnisse und ihre Literaturwerte, die mit den Formeln \eqref{eq:Lande} und 
+\eqref{eq:Egij}, 
+bestimmt wurden, sind in der Tabelle \ref{tab:D} zusammengefasst. Die Abweichung können 
+durch die Messungen des Magnetfeldes und den Auswertungsmethoden aus Kapitel \ref{sec:MB} erklärt 
+werden. Zur Messung des Magnetfeldes ist zu diskutieren, dass die Messung nicht an der Stelle der 
+Lampe geschehen ist, sondern an den Polschuhen des Magneten. Daraus folgt, dass die gemessen Werte 
+nicht genau den Bereich beschreiben, in dem das Magnetfeld wirkt und somit die tatsächlichen Werte 
+von den Messwerten abweichen können. Zu den Auswertungsmethoden ist zu diskutieren, dass diese 
+ebenfalls einem Fehler unterliegen, da die Intensitätmaxima nur bis zu einem gewissen Grad genau 
+zu lokalisieren sind, da Umgebungs- und Kameraeffekte die genaue Position der Maxima 
+verlaufen lassen. 
+\begin{table}
+ \centering
+ \begin{tabular}{S S S S@{$\quad \pm \quad$} S S} 
+  \toprule
+  $\text{Wellenlänge} / \si{\nano\meter} $ 
+  & $\text{Polarisation}$
+  & \multicolumn{3}{c}{$\text{Übergangs Lande-Faktor}$} 
+  & $ \text{Relative Abweichung} / \si{\percent}$ \\
+  \midrule
+  & &$\text{theoretisch} $&\multicolumn{2}{c}{$\text{experimentell}$}& \\
+  \midrule
+  643.8 & $\sigma$ & 1 &1& 0.026 &0 \\  
+  480 & $\sigma$ & 1.75 & 1.41 & 0.13 & 20 \\
+  480 & $  \text{\texorpdfstring{$\pi$}{math}}$ & 0.5 & 0.41 & 0.06 & 18 \\
+  \bottomrule
+  \end{tabular}
+ \caption{Messergebnisse und deren Erwartungswerte, sowie relativen Abweichungen im Überblick.}
+ \label{tab:D}
+\end{table}
