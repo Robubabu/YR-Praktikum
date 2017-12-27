@@ -12,6 +12,7 @@ from scipy.optimize import curve_fit
 from uncertainties import correlated_values, correlation_matrix
 from uncertainties import ufloat
 from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
+
 xlin = np.linspace(0, 12, 1000)
 # mhub = const.value('Bohr magneton') #das gelibete Borhsche Magneton zeigt wie man Scipy Constants benutzt
 def mittel(x):              #the real mean()-ing of life
