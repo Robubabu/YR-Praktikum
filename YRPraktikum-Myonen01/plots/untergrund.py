@@ -22,7 +22,7 @@ def poisson(a): #nur wenn k=1 aber passt hier
 Ufit=ufloat(0.848559707879, 0.221185434551)
 startim=ufloat(2102553,np.sqrt(2102553))
 stopim=ufloat(15711, np.sqrt(15711))
-gesamtzeit=83930*(10**6) #µs
+gesamtzeit=83930#*(10**6) #µs
 suchzeit=11.2 #µs
 kanal=512
 startimpulsrate= startim/gesamtzeit
@@ -30,7 +30,8 @@ P=poisson(startimpulsrate*suchzeit)
 Nfehl=P*startim
 U=Nfehl/kanal
 fehler=relf(Ufit,U)
-print(P)
-print(Nfehl)
-print(U)
-print(fehler)
+print(np.sqrt(232))
+# print(P)
+# print(Nfehl)
+# print(U)
+# print(fehler)

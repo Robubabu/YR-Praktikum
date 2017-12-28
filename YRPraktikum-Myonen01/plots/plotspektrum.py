@@ -30,12 +30,16 @@ def poisson(k,a): #nur wenn k=1 aber passt hier
 def f(t,a,U,N):
     return (N*np.exp(-a*t))+U
 
-def katot(x):
+def g(x,a,b):
+    return a*x+b
+
+def katot(x): # kanal to time
     return katot1o*x+katot2o
 
 x,y = np.genfromtxt('Spektrumfusch.txt', unpack=True)
 erry=np.sqrt(y)
-
+ylin=np.log(y)
+errylin=np.log(erry)
 x2= katot(x)
 #Fit
 params, covariance = curve_fit(f, x2, y,sigma=erry)
@@ -44,12 +48,17 @@ print('a =', params[0], '±', errors[0])
 print('U =', params[1], '±', errors[1])
 print('N =', params[2], '±', errors[2])
 
-lam= ufloat(params[0], errors[0])
-Zeitbla= 1/lam
-print(lam)
-print(Zeitbla)
-fehler=relf(tautheo,Zeitbla)
-print(fehler)
+params2, covariance2 = curve_fit(g, x2, ylin)
+errors2 = np.sqrt(np.diag(covariance2))
+print('a =', params2[0], '±', errors2[0])
+print('b =', params2[1], '±', errors2[1])
+
+#lam= ufloat(params[0], errors[0])
+#Zeitbla= 1/lam
+# print(lam)
+# print(Zeitbla)
+# fehler=relf(tautheo,Zeitbla)
+# print(fehler)
 #Tabelle
 # np.savetxt('tab.txt',np.column_stack([x,y]), delimiter=' & ',newline= r'\\'+'\n' )
 
@@ -59,12 +68,21 @@ print(fehler)
 # plt.legend(loc='best')
 # plt.savefig('KanalCounts.pdf')
 # plt.clf()
-plt.errorbar(x2, y, yerr=erry,fmt='rx',linewidth=1, label='Messdaten')
-plt.plot(xlin, f(xlin,*params),'k-',linewidth=2, label='Fit')
-plt.xlabel(r'$t\:/\:\upmu s$')
+# plt.errorbar(x2, y, yerr=erry,fmt='rx',linewidth=1, label='Messdaten')
+# plt.plot(xlin, f(xlin,*params),'k-',linewidth=2, label='Fit')
+# plt.xlabel(r'$t\:/\:\upmu s$')
+# plt.ylabel(r'Counts')
+# plt.legend(loc='best')
+# plt.savefig('ZeitCounts.pdf')
+# plt.clf()
+
+plt.errorbar(x2, y, yerr=(erry),fmt='rx',linewidth=1, label='Messdaten')
+plt.plot(xlin,f(xlin,*params),'k-',linewidth=2, label='Fit')
+plt.xlabel(r'$t\:/\:\mu s$')
+plt.yscale('log')
 plt.ylabel(r'Counts')
 plt.legend(loc='best')
-plt.savefig('ZeitCounts.pdf')
+plt.savefig('ZeitCountslinear.pdf')
 plt.clf()
 #plt.plot(x, y, 'kx',label='Messwerte')
 #

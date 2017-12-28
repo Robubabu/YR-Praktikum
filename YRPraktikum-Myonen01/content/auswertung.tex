@@ -50,7 +50,8 @@
 Um die optimale Verzögerungszeit zu finden, wurde  $T_\text{Vz}$ varriert und gegen die Anzahl an Startimpulsen pro 10\,s aufgetragen.\\
 In Abb. \ref{fig:Verzoegerung} sind die Messwerte aus Tabelle \ref{tab:Verzoegerung} aufgetragen. Da kein scharfes Maximum zu erwarten war,
 wurde ein Plateau gefittet und die Halbwertsbreibe bestimmt.\\
-Die maximale Anzahl an Counts $N_{\text{max}}=232$ wurde bei einer Verzögerungszeit von $T_\text{Vz}=4\,\text{ns}$ gemessen, weshalb diese
+Die Fehler der Counts wird mit dem $\sqrt{N}$-Gesetz abgeschätzt.\\
+Die maximale Anzahl an Counts $N_{\text{max}}=(232\pm15)$ wurde bei einer Verzögerungszeit von $T_\text{Vz}=4\,\text{ns}$ gemessen, weshalb diese
 an der Verzögerungsleitung eingestellt wurde.
 \begin{figure}
   \centering
@@ -58,12 +59,17 @@ an der Verzögerungsleitung eingestellt wurde.
   \caption{Messwerte und Fit des Plateaus zur Bestimmung der Verzögerungszeit.}
   \label{fig:Verzoegerung}
 \end{figure}
-Die in Abb. \ref{fig:Verzoegerung} bestimmte Halbwertsbreibe entspricht der Auflösungszeit $\Delta t_{\text{k}}$. Diese wurde Anhand
+Die in Abb. \ref{fig:Verzoegerung} bestimmte Halbwertsbreite entspricht der Auflösungszeit $\Delta t_{\text{k}}$
+der Koinzidenzeinheit und ergibt sich aus den Längen der Diskriminatorimpulsen.
+Hierbei sollte die Breite des Plateaus der Breite der Diskriminatorimpulsen entsprechen.\\
+Diese wurde Anhand
 des Plots zu
 \begin{equation*}
-  \Delta t_{\text{k}}=|-9|+|17|=26\,\text{ns}
+  \Delta t_{\text{k}}=(|-9|+|17|)\,\text{ns}=26\,\text{ns}
 \end{equation*}
 bestimmt.
+Dies ist die Zeit, welche die untere Schranke bildet, in der zwei Impulse unterschieden werden können.\\
+%Die Pulslänge des Diskriminators ist T$_\text{Puls}$ = 20 $\mu$s und somit geringer.
 \begin{table}[H]
 \centering
 \caption{Messwerte zur Bestimmung der Auflösungszeit der Messapperatur}
@@ -143,7 +149,7 @@ Kanal&$T_{\text{VZ}}$ in $\upmu$s\\
   \caption{Messdaten und Fit zur Zeitkalibrierungder Apperatur.}
   \label{fig:Kalibrierung}
 \end{figure}
-Die lineare Regression der Form $f(x)=a\cdot x+b$ liefert für den Zusammenhang von Kanalnummer und Zeitabstand
+Die lineare Regression der Form $f(x)=a\cdot x+b$ wird mit \cite{scipy} bestimmt und liefert für den Zusammenhang von Kanalnummer und Zeitabstand
 \begin{equation}
   \Delta t =\left(0,02238 \pm 1,4\times 10^{-5}\right)\,\upmu\text{s}\cdot K + \left(-0,014 ± 0,003\right)\,\upmu\text{s}.
   \label{eq:KanalZeit}
@@ -151,13 +157,13 @@ Die lineare Regression der Form $f(x)=a\cdot x+b$ liefert für den Zusammenhang 
 \subsection{Statistische Berechnung des Untergrundes}
 Um den Untergrund zu bestimmen wird die Startimpulsrate
 \begin{equation}
-  n=\frac{N_{\text{Start}}}{t_{\text{Gesamt}}}
+  n=\frac{N_{\text{Start}}}{t_{\text{Gesamt}}}=(25,05 \pm 0,01)\,\frac{1}{\symup{s}}
 \end{equation}
-über die gesamte Messdauer $t_{\text{Gesamt}}= 83930$\,s benötigt.\\
-Mit der poissionverteilten Wahrscheinlichkeit, dass n Teilchen während der Suchzeit $T_{\text{S}}=11,2\,\upmu\text{s}$ den Tank
+aus der gesamten Messdauer $t_{\text{Gesamt}}= 83930$\,s und der Anzahl an Startimpulsen $N_{\text{Start}}= (2102553 \pm 1450)$ bestimmt.\\
+Mit der poissionverteilten Wahrscheinlichkeit, dass n Teilchen während der Suchzeit $T_{\text{S}}= 11,2\,\upmu\text{s}$ den Tank
 durchqueren kann die Anzahl an Fehlmessungen $N_{\text{F}}$ mit
 \begin{equation}
-  N_{\text{F}}=P\cdot N_{\text{Start}}=\frac{n\cdot T_{\text{S}}}{1!}e^{n\cdot T_{\text{S}}}
+  N_{\text{F}}=P\cdot N_{\text{Start}}=\frac{n\cdot T_{\text{S}}}{1!}e^{n\cdot T_{\text{S}}}\cdot N_{\text{Start}}
 \end{equation}
 berechnet werden.\\
 Da diese Werte statistisch gleichverteilt sind kann die Untergrundrate pro Kanal mit
@@ -167,9 +173,9 @@ Da diese Werte statistisch gleichverteilt sind kann die Untergrundrate pro Kanal
 bestimmt werden.\\
 Damit ergeben sich folgende Werte:
 \begin{align*}
-  P&=(0,00028050\pm0,00000019)\%\\
+  P&=(0,0002805\pm0,0000002)\%\\
   N_{\text{F}}&=(589,8\pm0,8)\\
-  U&=(1,1519\pm0,0016)\frac{1}{\text{Kanal}}
+  U&=(1,152\pm0,002)\frac{1}{\text{Kanal}}
 \end{align*}
 \subsection{Bestimmung der Lebensdauer der Myonen}
 Zur Bestimmung der Lebensdauer $\tau$ der Myonen wird die Anzahl an Stoppsignalen in den Kanalen des Vielkanalanalysators gespeichert.
@@ -181,13 +187,19 @@ In Abbildung \ref{fig:KanalCount} sind die Counts $N$ gegen die Kanäle aufgetra
   \label{fig:KanalCount}
 \end{figure}
 Mit Gleichung \ref{eq:KanalZeit} wird aus den belegten Kanälen die Zeitdifferenz $\Delta t$ bestimmt und in Abbildung
-\ref{fig:ZeitCounts} aufgetragen.
+\ref{fig:ZeitCounts} sowie \ref{fig:ZeitCountslin} aufgetragen.
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{plots/ZeitCounts.pdf}
   \caption{Zur Bestimmung der Lebensdauer wurden die gemessenen Counts gegen den berechneten
     zeitlichen Abstand aufgetragen und mit einer Exponentialfunktion gefittet.}
   \label{fig:ZeitCounts}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{plots/ZeitCountslinear.pdf}
+  \caption{Der Übersichlichkeit halber wurden die Messdaten und der Fit aus Abb. \ref{fig:ZeitCounts} mit logarithmischer y-Achse dargestellt.}
+  \label{fig:ZeitCountslin}
 \end{figure}
 Die Werte aus Abb. \ref{fig:ZeitCounts} wurden mit der Funktion
 \begin{equation}
@@ -196,7 +208,7 @@ Die Werte aus Abb. \ref{fig:ZeitCounts} wurden mit der Funktion
 gefittet.
 Dabei ergeb sich für die Parameter folgende Werte:
 \begin{align*}
-  N&=(163 \pm 3)\\
+  N_0&=(163 \pm 3)\\
   \lambda&=(0,495 \pm 0,009)\,\frac{1}{\upmu\text{s}}\\
   U_{\text{fit}}&=(0,8 \pm 0,2) \frac{1}{\text{Kanal}}
 \end{align*}
