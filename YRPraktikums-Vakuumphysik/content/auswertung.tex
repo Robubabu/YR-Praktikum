@@ -49,7 +49,7 @@
 Im Folgenden werden die Fits, Plots und Fehlerrechnungen mit den Paketen Numpy \cite{numpy}, Uncertainties \cite{uncertainties},
 Matplotlib \cite{matplotlib} und Scipy \cite{scipy} in der Programmierumgebung Pyhton 3.6.0 erstellt bzw. durchgeführt.
 \subsection{Volumenbestimmung}
-Um das Saugvermögen der Pumpen zu bestimmen muss zuerst das Volumen der verwendeten Apperatur bestimmt werden. Dabei ist
+Um das Saugvermögen der Pumpen zu bestimmen muss zuerst das Volumen der verwendeten Apparatur bestimmt werden. Dabei ist
 darauf zu achten, dass das Gesamtvolumen des Aufbaues für die beiden Pumpen unterschiedlich groß ist.\\
 Hierzu werden für die meisten Bauteile die Angaben aus \cite{Anleitung} verwendet.\\
 Ein weiteres verwendetes Bauteil wurde vermessen und wird, da es gut als Zylinder genähert werden kann, mit
@@ -76,7 +76,7 @@ Die Einzelvolumina werden aufaddiert und der Fehler mit Formel \ref{eq:GaussFehl
 
 \begin{table}[H]
 \centering
-\caption{Werte zur Bestimmung des Gesamtvolumen der Apperatur bei der Evakuierungsmessung der Turbomolekularpumpe.}
+\caption{Werte zur Bestimmung des Gesamtvolumen der Apparatur bei der Evakuierungsmessung der Turbomolekularpumpe.}
 \label{tab:Volumen_ET}
 \begin{tabular}{c|c}
 Bauteil & Voumen $V$ in l\\
@@ -101,7 +101,7 @@ Gesamtvolumen&$11,0 \pm 0,8$\\
 
 \begin{table}[H]
 \centering
-\caption{Werte zur Bestimmung des Gesamtvolumen der Apperatur bei der Leckratenmessung der Turbomolekularpumpe.}
+\caption{Werte zur Bestimmung des Gesamtvolumen der Apparatur bei der Leckratenmessung der Turbomolekularpumpe.}
 \label{tab:Volumen_LT}
 \begin{tabular}{c|c}
 Bauteil & Voumen $V$ in l\\
@@ -119,7 +119,7 @@ Gesamtvolumen&$10,0\pm0,8$\\
 
 \begin{table}[H]
 \centering
-\caption{Werte zur Bestimmung des Gesamtvolumen der Apperatur bei der Evakuierungsmessung der Drehschieberpumpe.}
+\caption{Werte zur Bestimmung des Gesamtvolumen der Apparatur bei der Evakuierungsmessung der Drehschieberpumpe.}
 \label{tab:Volumen_ED}
 \begin{tabular}{c|c}
 Bauteil & Voumen $V$ in l\\
@@ -144,7 +144,7 @@ Gesamtvolumen&$11,0 \pm 0,8$\\
 
 \begin{table}[H]
 \centering
-\caption{Werte zur Bestimmung des Gesamtvolumen der Apperatur bei der Leckratenmessung der Drehschieberpumpe.}
+\caption{Werte zur Bestimmung des Gesamtvolumen der Apparatur bei der Leckratenmessung der Drehschieberpumpe.}
 \label{tab:Volumen_LD}
 \begin{tabular}{c|c}
 Bauteil & Voumen $V$ in l\\
@@ -364,7 +364,7 @@ $(10 \pm 2)$& 126,90& 122,17& 133,25& $(127 \pm 3)$ \\
 \end{tabular}
 \end{table}
 In den Graphiken \ref{fig:leck_dreh_groß1} und \ref{fig:leck_dreh_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
-Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+Es wurden mittels linearer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
 \begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -441,9 +441,9 @@ Das Volumen bei dieser Messung beträgt $V=(11,0 \pm 0,8)$\,l.
 \end{aligned}
 \end{align}
 Abschließend wird das Saugvermögen der Drehschieberpumpe gegen den Druck aus den einzelnen Messungen aufgetragen. Hierbei
-stehen die horizonalen Balken in Abbildung \ref{fig:SaugDreh} für den Druckbereich für den diese Saugleistung bestimmt wurde
+stehen die horizontalen Balken in Abbildung \ref{fig:SaugDreh} für den Druckbereich für den diese Saugleistung bestimmt wurde
 und die vertikalen Balken geben den Fehler an. Die Bezeichnungen sind wie folgt gewählt: $S_{\text{theo}}$ steht für die
-angabe des Herstellers, da dort keine Angaben zum Fehler gemacht werden, konnte dieser nicht eingetragen werden \cite{Anleitung}.
+Angabe des Herstellers, da dort keine Angaben zum Fehler gemacht werden, konnte dieser nicht eingetragen werden \cite{Anleitung}.
 Die aus dem Exponentialfit bestimmte gemittelte Saugleistung ist mit $S_\symup{g}$ benannt. $S_\symup{lin_i}$ zeigen die Werte
 aus den logarithmirten Fits und $S_\symup{leck_i}$ sind die Werte aus den Leckratenmessungen.
 \begin{figure}[H]
@@ -496,8 +496,8 @@ Aus Gleichung \ref{eq:pt} folgt $b=\frac{S}{V}$. Mit einem Volumen von $V=(11,0 
   S_\symup{g}= b \cdot V =(1,08 \pm 0,02)\,\frac{1}{\symup{s}} \cdot (11,0 \pm 0,8)\,\symup{l} =(11,9 \pm 0,9)\,\frac{\symup{l}}{\symup{s}}
   \label{eq:Saugvermögen}
 \end{equation}
-Um das Saugvermögen in Abhänigkeit des Drucks zu bestimmen wurden
-in Abbildung \ref{fig:EvaTurboLin} die logarithmirten Werte gegen die Zeit aufgetragen.
+Um das Saugvermögen in Abhängigkeit des Drucks zu bestimmen wurden
+in Abbildung \ref{fig:EvaTurboLin} die logarithmierten Werte gegen die Zeit aufgetragen.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/EvakuierungTurbolin.pdf}
@@ -600,7 +600,7 @@ $(8 \pm 0,8)\cdot 10^{-3}$& 42,54& 44,08 &60,02&$(48 \pm 6)$\\
 \end{tabular}
 \end{table}
 In den Graphiken \ref{fig:leck_turbo_groß1} und \ref{fig:leck_turbo_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
-Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+Es wurden mittels linearer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
 \begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -676,7 +676,7 @@ Das Volumen bei dieser Messung beträgt $V=(10,0 \pm 0,8)$\,l.
 \end{aligned}
 \end{align}
 Abschließend wird das Saugvermögen der Turbomolekularpumpe gegen den Druck aus den einzelnen Messungen aufgetragen. Hierbei
-stehen die horizonalen Balken in Abbildung \ref{fig:SaugTurbo} für den Druckbereich für den diese Saugleistung bestimmt wurde
+stehen die horizontalen Balken in Abbildung \ref{fig:SaugTurbo} für den Druckbereich für den diese Saugleistung bestimmt wurde
 und die vertikalen Balken geben den Fehler an. Die Bezeichnungen sind analog zu denen in \ref{fig:SaugDreh}.
 \begin{figure}[H]
   \centering
