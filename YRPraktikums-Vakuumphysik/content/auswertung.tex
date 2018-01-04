@@ -61,7 +61,7 @@ bestimmt. In \ref{eq:VolumenZylinder} wurde der Fehler des bestimmten Volumens m
 Allgemein wird diese für eine Funktion $f$ mit $M$ Variablen $x_i$ über
 \begin{equation}
   \label{eq:GaussFehler}
-  \sigma_f= \sqrt{ \sum_i^M \left(\frac{\partial f}{\partial x_i} \sigma_{x_i}\right)^2}.
+  \sigma_f= \sqrt{ \sum_i^M \left(\frac{\partial f}{\partial x_i} \sigma_{x_i}\right)^2}
 \end{equation}
 berechnet.\\
 Für das zu berechnende Verbindungsstück wurden für den Innendurchmesser $d=(12,00 \pm 0,05)$ mm und für die Läge $L=(61\pm 1)$ mm vermessen.
@@ -190,7 +190,7 @@ muss der sich ergebende Fehler mit Formel \ref{eq:GaussFehler} zu
 \begin{equation}
   \label{eq:FehlerLnDruck}
   \sigma_{ln(p)}=\sqrt{\frac{\sigma_{p}^{2}}{\left(p - p_\symup{E}\right)^{2}} + \frac{\sigma_{p_{0}}^{2}}{\left(p_{0} - p_\symup{E}\right)^{2}} + \frac{\sigma_{p_\symup{E}}^{2}
-   \left(p_{0} - p_\symup{E}\right)^{2}}{\left(p - p_\symup{E}\right)^{2}} \left(\frac{p - p_\symup{E}}{\left(p_{0} - p_\symup{E}\right)^{2}} - \frac{1}{p_{0} - p_\symup{E}}\right)^{2}}.
+   \left(p_{0} - p_\symup{E}\right)^{2}}{\left(p - p_\symup{E}\right)^{2}} \left(\frac{p - p_\symup{E}}{\left(p_{0} - p_\symup{E}\right)^{2}} - \frac{1}{p_{0} - p_\symup{E}}\right)^{2}}
 \end{equation}
 bestimmt werden.
 
@@ -222,7 +222,7 @@ dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/EvakuierungDrehExp.pdf}
-  \caption{Plot der in Tabelle \ref{tab:EvakuierungskurveDrehschieber} aufgelisteten Messwerte mit exponentiellem Fit. Zusätzlich ist eine Vergrößerung
+  \caption{Graphische Darstellung der in Tabelle \ref{tab:EvakuierungskurveDrehschieber} aufgelisteten Messwerte mit exponentiellem Fit. Zusätzlich ist eine Vergrößerung
   des Bereichs 100\,s$\leq t\leq$240\,s dargestellt.}
   \label{fig:EvaDrehExp}
 \end{figure}
@@ -249,7 +249,7 @@ In Abbildung \ref{fig:EvaDrehLin} sind die logarithmirten Werte gegen die Zeit a
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/EvakuierungDrehlin.pdf}
-  \caption{Plot der in Tabelle \ref{tab:EvakuierungskurveDrehschieber} aufgelisteten Messwerte mit linearen Fits der einzelnen Teilbereichen.}
+  \caption{Gerafische Darstellung der in Tabelle \ref{tab:EvakuierungskurveDrehschieber} aufgelisteten Messwerte mit linearen Ausgleichsgerade der einzelnen Teilbereichen.}
   \label{fig:EvaDrehLin}
 \end{figure}
 Wie in der Abbildung \ref{fig:EvaDrehLin} zu erkennen, gibt es drei lineare Bereiche. %,
@@ -363,8 +363,8 @@ $(10 \pm 2)$& 126,90& 122,17& 133,25& $(127 \pm 3)$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-In den Graphiken \ref{fig:leck_dreh_groß1} und \ref{fig:leck_dreh_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
-Es wurden mittels linearer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+In den Abbildungen \ref{fig:leck_dreh_groß1} und \ref{fig:leck_dreh_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
+Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
 \begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -445,7 +445,7 @@ stehen die horizontalen Balken in Abbildung \ref{fig:SaugDreh} für den Druckber
 und die vertikalen Balken geben den Fehler an. Die Bezeichnungen sind wie folgt gewählt: $S_{\text{theo}}$ steht für die
 Angabe des Herstellers, da dort keine Angaben zum Fehler gemacht werden, konnte dieser nicht eingetragen werden \cite{Anleitung}.
 Die aus dem Exponentialfit bestimmte gemittelte Saugleistung ist mit $S_\symup{g}$ benannt. $S_\symup{lin_i}$ zeigen die Werte
-aus den logarithmirten Fits und $S_\symup{leck_i}$ sind die Werte aus den Leckratenmessungen.
+aus den logarithmirten Ausgleichsrechnungen und $S_\symup{leck_i}$ sind die Werte aus den Leckratenmessungen.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/SaugverDreh.pdf}
@@ -479,7 +479,7 @@ dargestellt.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/EvakuierungTurboExp.pdf}
-  \caption{Plot der in Tabelle \ref{tab:EvakuierungskurveTurbo} aufgelisteten Messwerte mit exponentiellem Fit. Zusätzlich ist eine Vergrößerung
+  \caption{Gerafische Darstellung der in Tabelle \ref{tab:EvakuierungskurveTurbo} aufgelisteten Messwerte mit exponentiellem Fit. Zusätzlich ist eine Vergrößerung
   des Bereichs 7\,s$\leq t\leq$10\,s dargestellt.}
   \label{fig:EvaTurboExp}
 \end{figure}
@@ -501,7 +501,7 @@ in Abbildung \ref{fig:EvaTurboLin} die logarithmierten Werte gegen die Zeit aufg
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{plots/EvakuierungTurbolin.pdf}
-  \caption{Plot der in Tabelle \ref{tab:EvakuierungskurveTurbo} aufgelisteten Messwerte mit linearen Fits der einzelnen Teilbereichen.}
+  \caption{Grafische Drastellung der in Tabelle \ref{tab:EvakuierungskurveTurbo} aufgelisteten Messwerte mit linearen Ausgleichsgeraden der einzelnen Teilbereichen.}
   \label{fig:EvaTurboLin}
 \end{figure}
 Wie in der Abbildung \ref{fig:EvaDrehLin} zu erkennen, gibt es zwei lineare Bereiche. %,
@@ -599,8 +599,16 @@ $(8 \pm 0,8)\cdot 10^{-3}$& 42,54& 44,08 &60,02&$(48 \pm 6)$\\
 \bottomrule
 \end{tabular}
 \end{table}
+<<<<<<< HEAD
 In den Graphiken \ref{fig:leck_turbo_groß1} und \ref{fig:leck_turbo_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
 Es wurden mittels linearer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+||||||| merged common ancestors
+In den Graphiken \ref{fig:leck_turbo_groß1} und \ref{fig:leck_turbo_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
+Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+=======
+In den Abbildungen \ref{fig:leck_turbo_groß1} und \ref{fig:leck_turbo_groß2} sind die Messwerte der vier Leckratenmessungen graphisch aufgetragen.
+Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradengleichung} bestimmt.
+>>>>>>> blablub
 \begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
