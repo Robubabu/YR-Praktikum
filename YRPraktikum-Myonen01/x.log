@@ -1,4 +1,4 @@
-This is LuaTeX, Version 0.95.0 (TeX Live 2016/W32TeX)  (format=lualatex 2016.10.3)  21 NOV 2017 11:00
+This is LuaTeX, Version 0.95.0 (TeX Live 2016/W32TeX)  (format=lualatex 2016.10.3)  8 JAN 2018 10:07
  restricted system commands enabled.
 **Auswertung.tex
 (c:/texlive/2016/texmf-dist/tex/latex/tools/x.tex
@@ -16,7 +16,7 @@ and deduce the truth by order and method.
 )
 
 Here is how much of LuaTeX's memory you used:
- 9 strings out of 495118
+ 8 strings out of 495118
  100000,89155 words of node,token memory allocated
  238 words of node memory still in use:
    2 glue, 32 glue_spec nodes
