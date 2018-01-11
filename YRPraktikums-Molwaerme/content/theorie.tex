@@ -1,0 +1,92 @@
+\section{Theorie}
+\label{sec:Theorie}
+\paragraph{Ziel}
+In diesem Versuch soll durch die Messung der Molwäre einer Metallprobe (??? kupfer)die Debye-Temperatur
+ermittelt werden.\\
+Um die Temperatrabhängigkeit der Molwärme von Festkörpern zu erklären werden im folgenden drei Modelle
+vorgestellt.
+\paragraph{Die klassiche Theorie}
+besagt nach dem Äquipartitionstheorem, dass jedes Atom eines Körpers im Mittel die Energie
+$ \left< E \right>=\frac{1}{2}\symup{k_\symup{B}}T$ für
+jeden Freiheitsgrad besizt.
+Klassisch wird für einen kristallinen Festkörper erwartet, dass die mittlere Energie dabei der
+ mittleren potentiellen Energie entspricht, da die Atome harmonisch um ihre festgelegte Ruhelage schwingen.
+ Pro Mol des Materials ergibt sich also eine Energie von
+ \begin{equation}
+   E=3\symup{k_\symup{B}}\symup{N_\symup{L}}T=3\symup{R}T .
+   \label{eq:EproMol}
+ \end{equation}
+Dabei ist in \ref{eq:EproMol} $\symup{N_\symup{L}}=2,69\cdot10^{25}\, \frac{1}{\symup{m}^3}$ \cite{Lohschmidt} die Lohschmidsche Zahl
+und R=$8,31\,\frac{\symup{J}}{\symup{mol\,K}}$ \cite{Gaskonst} die allgemeine Gaskonstante.\\
+Für die spezifische Molwärme folgt daraus
+\begin{equation}
+  C_V = \left(\frac{\partial U}{\partial T} \right)_V = 3R \, .
+  \label{eq:MolKla}
+\end{equation}
+Obwohl sich zeigt, dass $C_V$ sich dem absoluten Wert aus Gleichung \ref{eq:MolKla} bei hohen Temperaturen annähert,
+liefert dieses Modell keine Erklärung zur Temperatur- und Materialabhängigkeit. Dies widerspricht den experimentellen
+Beobachtungen.
+\paragraph{Das Einstein-Modell}
+berücksichtigt die quantenmechanische Energiequantelung der atomaren Oszillatoren.
+Es besagt, dass die Energie, der mit der einheitlichen Frequenz $\omega$ schwingenden Atome sich nur um ganzzahlige Vielfache der
+Energie $\hbar\omega$ ändern kann. Um die mittlere Energie zu bestimmen wird die Boltzmann-Verteilung verwendet um die
+Wahrscheinlichkeit anzugeben, dass der atomare Oszillator eine Energie von
+$n \hbar \omega$ mit $n \in \symup{N_0}$ besitzt:
+\begin{equation}
+   W(n) = \symup{exp}\left(- \frac{n \, \hbar \, \omega}{k_B \, T} \right) \, .
+  \label{eq:Boltzi}
+\end{equation}
+Wird über alle, mit Gleichung \ref{eq:Boltzi} gewichteten, möglichen Energien summiert und durch die Summer aller Wahrscheinlichkeiten
+geteilt ergibt sich für die mittlere Energie
+\begin{equation}
+  \left< U \right >_\symup{Einstein} = \frac{\hbar \omega}
+  {\exp{\left(\frac{\hbar \omega}{\symup{k_\symup{B}} T} \right)} - 1} .
+  \label{eq:EnergieEin}
+\end{equation}
+Für die Molwärme folgt daraus
+\begin{equation}
+  {C_{V,\symup{Einstein}}} =
+3\symup{R} \frac{\hbar^2 \omega^2}{\symup{k_\symup{B}}^2 T^2} \frac{\exp{\left(\hbar \omega / \symup{k_\symup{B}} T \right)}}
+{\left[\exp{\left(\hbar \omega / \symup{k_\symup{B}} T \right)} - 1 \right]^2}
+  \label{eq:MolEin}
+\end{equation}
+Es wird ersichtlich, dass diese Näherung Temperaturabhängig ist und sie für hohe Temperaturen gegen 3R geht, trotzdem
+zeigt sich im Vergleich mit experimentellen Werten, dass Abweichung im Bereich tiefer Temperaturen auftreten.
+\paragraph{Das Debye-Modell} liefert eine genauere Aussage über die Molwärme, da es die Verteilung der Frequenzen $Z(\omega)$ aller
+Oszillatoren mitbetrachtet. Wenn Materiallien mit anisotropem und dispersivem Verhalten sowie die
+Frequenz- und Richtungsabhängigkeit der Phasengeschwindigkeit vernachlässigt werden, lässt sich
+$Z(\omega)$ aus der Anzahl der Eigenschwingungen im Frequenzintervall $[\omega +\symup{d}\omega]$ zu
+  \begin{equation}
+  Z(\omega) \symup{d} \omega = \frac{L^3}{2\pi^2} \omega^2
+  \left(\frac{1}{v_\symup{l}^3}  + \frac{2}{v_\symup{tr}^3} \right) \symup{d} \omega
+  \label{eq:Freq}
+\end{equation}
+bestimmen. Wobei $v_\symup{l}$ und $v_\symup{tr}$ die Phasengeschwindigkeiten in longitudinaler bzw. transversaler
+Richtung beschreiben.\\
+Da ein $\symup{N_\symup{L}}$-Atomiger, endlicher Kristall genau 3$\symup{N_\symup{L}}$ Eigenschwingungen hat, ergibt sich
+eine obere Grenzfrequenz
+\begin{equation}
+  \omega_\symup{D}= \left(\frac{18 \pi^2 \symup{N}_\symup{L}}{L^3}
+   \left(\frac{1}{v_\symup{l}^3} + \frac{2}{v_\symup{tr}^3}\right)^{-1}\right)
+   ^{\frac{1}{3}} ,
+\label{eq:DebFre}
+\end{equation}
+welche Debye-Frequenz genannt wird.\\
+Damit ergibt sich für die Molwärme
+\begin{equation}
+  C_{V,\symup{Debye}} = 9 \symup{R} \left(\frac{T}{\theta_\symup{D}}\right)^3 \int_0^{\frac{\theta_\symup{D}}{T}}
+  \frac{x^4  \exp{x}}{(\exp{x} - 1)^2} \symup{d}x
+  \label{eq:MolDeb}
+\end{equation}
+mit $\theta_\symup{D}$ als Debye-Temperatur, welche materialabhängig ist. Gleichung \ref{eq:MolDeb}
+zeigt für den Grenzfall hoher Temperaturen
+\begin{equation*}
+  \lim \limits_{T \to \infty}{{C_{V,\symup{Debye}}}} = 3\symup{R}
+\end{equation*}
+den zu erwartenden Grenzwert.
+Für geringe Temperaturen $T \ll \theta_\symup{D}$ ergibt sich:
+\begin{equation*}
+  \lim \limits_{T \to 0}{{C_{V,\symup{Debye}}}} \propto T^3 .
+\end{equation*}
+Dieses Verhalten spiegelt den Verlauf der experimentellen Kurve auch für kleine Temperaturen
+ausreichend gut wieder.
