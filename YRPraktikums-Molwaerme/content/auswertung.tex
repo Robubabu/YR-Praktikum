@@ -64,7 +64,7 @@ C_p = \frac{U\cdot I \cdot t_H \cdot M}{\Delta T \cdot m} \; .
 Hier bei ist $U$ die an der Probe angelegte Spannung, $I$ der angelegte Strom, $t_H$ die Heizdauer, 
 $M$ die Molmasse, $m$ die Masse der Probe und $\Delta T$ die Temperaturänderung. 
 Die fehlerbehafteten Größen sind hier bei $U$ und $I$ mit \SI{10}{\percent} der Skala,
-$t_H$ mit $ \pm 5\si{\second}$ und $\Delta T$ mit \SI{0.2}{\percent} auf den gemessenen Widerstand 
+$t_H$ mit $\pm 5\;\si{\second}$ und $\Delta T$ mit \SI{0.2}{\percent} auf den gemessenen Widerstand 
 der Pt-100-Widstände, die linear mit der Temperatur zusammenhängen. Der Fehler der 
 Gleichung \eqref{eq:Cp} ist dann durch Gauß'sche Fehlerfortpflanzung gegeben;
 \begin{equation}
@@ -108,21 +108,21 @@ Die Ergebnisse sind in der Abbildung \ref{fig:CVP} festgehalten.
   %\sisetup{round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{  
-S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = 0]
+|S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = 0]
 @{${}\pm{}$} 
 S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = 0] 
-S[round-mode = places , round-precision = 2,scientific-notation=fixed, fixed-exponent = 0]
+|S[round-mode = places , round-precision = 2,scientific-notation=fixed, fixed-exponent = 0]
 @{$\quad\pm{}$} 
-S[round-mode = places , round-precision = 3,scientific-notation=fixed, fixed-exponent = 0] 
-S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = -3]
+S[round-mode = places , round-precision = 0,scientific-notation=true]%, fixed-exponent = 0] 
+|S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = -3]
 @{$\qquad\pm{}$} 
 S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = -4] 
-S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
+|S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
 @{${}\pm \quad$} 
 S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
-S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
+|S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
 @{${}\pm{}$} 
-S[round-mode = places , round-precision = 0] 
+S[round-mode = places , round-precision = 0,scientific-notation=true]|
 }
     \toprule
      \multicolumn{2}{c}{$\Delta T  / \si{\kelvin}$} & 
@@ -179,9 +179,9 @@ S[round-mode = places , round-precision = 0]
   %\sisetup{round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0}
 %  \resizebox{\textwidth}{!}{%
   \begin{tabular}{  
-S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
+S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = 0]
 @{${}\pm \quad$} 
-S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
+S[round-mode = places , round-precision = 1,scientific-notation=fixed, fixed-exponent = 0]
 S[round-mode = places , round-precision = 0,scientific-notation=fixed, fixed-exponent = 0]
 @{${}\pm{}$} 
 S[round-mode = places , round-precision = 0] 
