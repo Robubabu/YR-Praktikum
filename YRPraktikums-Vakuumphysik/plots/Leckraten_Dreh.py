@@ -16,9 +16,9 @@ def relf(l,m):  #in Prozent
 def g(x,m,n):
     return m*x+n
 
-Ve=ufloat(11,0.8)
+Ve=ufloat(10.9,0.9)
 
-xlin=np.linspace(0,150 , 1000)
+xlin=np.linspace(-10,150 , 1000)
 #p=1mbar
 p1=[1,2,3,4,5,6,7,8,9,10]
 p1err=[0.2,0.2*2,0.2*3,0.2*4,0.2*5,0.2*6,0.2*7,0.2*8,0.2*9,0.2*10]
@@ -44,6 +44,7 @@ t17m=mittel(t17)
 t18m=mittel(t18)
 t19m=mittel(t19)
 t1m=[t10m,t11m,t12m,t13m,t14m,t15m,t16m,t17m,t18m,t19m]
+print(t1m)
 #p=01mbar
 p2=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8]
 p2err=[0.02,0.2*0.2,0.2*0.3,0.2*0.4,0.2*0.5,0.2*0.6,0.2*0.7,0.2*0.8]
@@ -65,6 +66,7 @@ t25m=mittel(t25)
 t26m=mittel(t26)
 t27m=mittel(t27)
 t2m=[t20m,t21m,t22m,t23m,t24m,t25m,t26m,t27m]
+print(t2m)
 #p=04mbar
 p3=[0.4,1  ,1.5,2  ,2.5,3  ,3.5,4  ]
 p3err=[0.4*0.2, 0.2*1  ,0.2*1.5,0.2*2  ,0.2*2.5,0.2*3  ,0.2*3.5,0.2*4]
@@ -86,6 +88,7 @@ t35m=mittel(t35)
 t36m=mittel(t36)
 t37m=mittel(t37)
 t3m=[t30m,t31m,t32m,t33m,t34m,t35m,t36m,t37m]
+print(t3m)
 #p=08mbar
 p4=[0.8,2,3,4,5,6,7,8]
 p4err=[0.2*0.8,0.2*2,0.2*3,0.2*4,0.2*5,0.2*6,0.2*7,0.2*8]
@@ -107,22 +110,23 @@ t45m=mittel(t45)
 t46m=mittel(t46)
 t47m=mittel(t47)
 t4m=[t40m,t41m,t42m,t43m,t44m,t45m,t46m,t47m]
+print(t1m)
 params1, covariance1 = curve_fit(f=g, xdata=noms(t1m), ydata=noms(p1mf))
 errors1 = np.sqrt(np.diag(covariance1))
-print('a2 =', params1[0], '±', errors1[0])
-print('b2 =', params1[1], '±', errors1[1])
+#print('a2 =', params1[0], '±', errors1[0])
+#print('b2 =', params1[1], '±', errors1[1])
 params2, covariance2 = curve_fit(f=g, xdata=noms(t2m), ydata=noms(p2mf))
 errors2 = np.sqrt(np.diag(covariance2))
-print('a2 =', params2[0], '±', errors2[0])
-print('b2 =', params2[1], '±', errors2[1])
+#print('a2 =', params2[0], '±', errors2[0])
+#print('b2 =', params2[1], '±', errors2[1])
 params3, covariance3 = curve_fit(f=g, xdata=noms(t3m), ydata=noms(p3mf))
 errors3 = np.sqrt(np.diag(covariance3))
-print('a3 =', params3[0], '±', errors3[0])
-print('b3 =', params3[1], '±', errors3[1])
+#print('a3 =', params3[0], '±', errors3[0])
+#print('b3 =', params3[1], '±', errors3[1])
 params4, covariance4 = curve_fit(f=g, xdata=noms(t4m), ydata=noms(p4mf))
 errors4 = np.sqrt(np.diag(covariance4))
-print('a4 =', params4[0], '±', errors4[0])
-print('b4 =', params4[1], '±', errors4[1])
+#print('a4 =', params4[0], '±', errors4[0])
+#print('b4 =', params4[1], '±', errors4[1])
 a1 =ufloat(params1[0], errors1[0])
 a2 =ufloat(params2[0], errors2[0])
 a3 =ufloat(params3[0], errors3[0])
@@ -132,10 +136,10 @@ S1=(Ve/p1mf[0])*a1
 S2=(Ve/p2mf[0])*a2
 S3=(Ve/p3mf[0])*a3
 S4=(Ve/p4mf[0])*a4
-# print(S1)
-# print(S2)
-# print(S3)
-# print(S4)
+print(S1)
+print(S2)
+print(S3)
+print(S4)
 Stheo=1.1
 Sexp=ufloat(0.92 , 0.07)
 Slin1=ufloat(1.05, 0.08) #2-100
@@ -144,7 +148,7 @@ Slin3=ufloat(0.24, 0.04) #0,02-0,1
 
 plt.errorbar(noms(t1m),noms(p1mf), xerr=stds(t1m), yerr=stds(p1mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params1),'k-',linewidth=2, label='Fit')
-plt.xlim(0,135)
+plt.xlim(-10,135)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -154,7 +158,7 @@ plt.savefig('LeckrateDreh1.pdf')
 plt.clf()
 plt.errorbar(noms(t2m),noms(p2mf), xerr=stds(t2m), yerr=stds(p2mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params2),'k-',linewidth=2, label='Fit')
-plt.xlim(0,125)
+plt.xlim(-10,125)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -164,7 +168,7 @@ plt.savefig('LeckrateDreh0_1.pdf')
 plt.clf()
 plt.errorbar(noms(t3m),noms(p3mf), xerr=stds(t3m), yerr=stds(p3mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params3),'k-',linewidth=2, label='Fit')
-plt.xlim(0,130)
+plt.xlim(-10,130)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -174,7 +178,7 @@ plt.savefig('LeckrateDreh0_4.pdf')
 plt.clf()
 plt.errorbar(noms(t4m),noms(p4mf), xerr=stds(t4m), yerr=stds(p4mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params4),'k-',linewidth=2, label='Fit')
-plt.xlim(0,130)
+plt.xlim(-10,130)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')

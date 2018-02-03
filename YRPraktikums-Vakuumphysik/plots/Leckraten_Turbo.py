@@ -17,7 +17,7 @@ def g(x,m,n):
     return m*x+n
 
 Ve=ufloat(11,0.8)
-xlin=np.linspace(0,100 , 1000)
+xlin=np.linspace(-10,100 , 1000)
 #p2_4
 p1=[2*10**(-4),6*10**(-4),8*10**(-4),2*10**(-3),4*10**(-3),6*10**(-3),8*10**(-3)]
 p1err=[2*10**(-5),6*10**(-5),8*10**(-5),2*10**(-4),4*10**(-4),6*10**(-4),8*10**(-4)]
@@ -130,10 +130,10 @@ S1=(Ve/p1mf[0])*a1
 S2=(Ve/p2mf[0])*a2
 S3=(Ve/p3mf[0])*a3
 S4=(Ve/p4mf[0])*a4
-# print(S1)
-# print(S2)
-# print(S3)
-# print(S4)
+print(S1)
+print(S2)
+print(S3)
+print(S4)
 Stheo=77
 Sg=ufloat(11.9 , 0.9)
 Slin1=ufloat(12.2 , 0.9)
@@ -151,7 +151,7 @@ h10=h9-(8*10**(-5))
 
 plt.errorbar(noms(t1m),noms(p1mf), xerr=stds(t1m), yerr=stds(p1mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params1),'k-',linewidth=2, label='Fit')
-plt.xlim(0,19)
+plt.xlim(-1.5,19)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -161,7 +161,7 @@ plt.savefig('LeckrateTurbo2_4.pdf')
 plt.clf()
 plt.errorbar(noms(t2m),noms(p2mf), xerr=stds(t2m), yerr=stds(p2mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params2),'k-',linewidth=2, label='Fit')
-plt.xlim(0,34)
+plt.xlim(-2.5,34)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -171,7 +171,7 @@ plt.savefig('LeckrateTurbo1_4.pdf')
 plt.clf()
 plt.errorbar(noms(t3m),noms(p3mf), xerr=stds(t3m), yerr=stds(p3mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params3),'k-',linewidth=2, label='Fit')
-plt.xlim(0,70)
+plt.xlim(-5,70)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
@@ -181,7 +181,7 @@ plt.savefig('LeckrateTurbo3_5.pdf')
 plt.clf()
 plt.errorbar(noms(t4m),noms(p4mf), xerr=stds(t4m), yerr=stds(p4mf),fmt='rx',linewidth=1, label='Messdaten')
 plt.plot(xlin, g(xlin,*params4),'k-',linewidth=2, label='Fit')
-plt.xlim(0,60)
+plt.xlim(-5,60)
 #plt.ylim(-0.001,0.004)
 plt.grid(True)
 plt.ylabel(r'$p\,/\,$mbar')
