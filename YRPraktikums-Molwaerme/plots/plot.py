@@ -20,17 +20,18 @@ def cp(dT, U, I, M, dt, m):
 # cv bestimmen
 def cv(cp, alpha_T, kappa, V0, Tbar):
     return -9*alpha_T**2*kappa*V0*Tbar + cp
-def alpha(T):
-	alph = np.empty(0)
-	for t in T:
-		for a in alphaT:
-			if(a>=t):
-				alph=np.append(alph,alphaW[alphaT==a])
-				break
-		if(t>alphaT[-1]):
-			alph=np.append(alph,alphaW[-1])
+#def alpha(T):
+#	alph = np.empty(0)
+#	for t in T:
+#		for a in alphaT:
+#			if(a>=t):
+#				alph=np.append(alph,alphaW[alphaT==a])
+#				break
+#		if(t>alphaT[-1]):
+#			alph=np.append(alph,alphaW[-1])
+#
+#	return alph*10**(-6)	
 
-	return alph*10**(-6)	
 #Werte einlesen 
 t,RP,RG,UP,IP,UG,IG = np.genfromtxt('Messwerte.txt', unpack = True)
 Masse = 0.342 #[kg]
@@ -71,16 +72,25 @@ for i in laufi:
 
 DeltaTP = unp.uarray(DeltaTP,errDeltaTP)
 dt = unp.uarray(Deltat,errDeltat)
+#alpha 
+#Fit
+def fit(C,a,b):
+	return a*C +b 
+params , cov = curve_fit(fit ,alphaT  ,alphaW )
+params = correlated_values(params, cov)
+a = params[0]
+b = params[1]
+
 #Berechne Cp und Cv:
 x = noms(TP[1:])
 Cp =  cp(DeltaTP,UP[1:],IP[1:],MolMasse,dt, Masse)
-alphax = alpha(x)
-Cv = cv(Cp,alpha(x),kappa,MVol,TP[:-1])
+alphax = fit(TP[1:],a,b)*10**(-6)
+Cv = cv(Cp,alphax,kappa,MVol,TP[:-1])
 mitCp = np.mean(Cp)
 #print(alphax)
 #Tabelle
 np.savetxt('CPtab.txt',np.column_stack([noms(DeltaTP),stds(DeltaTP),noms(UP[1:]),stds(UP[1:]),noms(IP[1:]),stds(IP[1:]),noms(dt),stds(dt),noms(Cp), stds(Cp)]), delimiter=' & ',newline= r'\\'+'\n' )
-np.savetxt('CVtab.txt',np.column_stack([x,stds(TP[1:]),noms(Cp), stds(Cp),alphax, noms(Cv), stds(Cv)]), delimiter=' & ',newline= r'\\'+'\n' )
+np.savetxt('CVtab.txt',np.column_stack([x,stds(TP[1:]),noms(Cp), stds(Cp),noms(alphax),stds(alphax), noms(Cv), stds(Cv)]), delimiter=' & ',newline= r'\\'+'\n' )
 
 
 #Plot des Temperatur verlaufes
@@ -98,17 +108,29 @@ np.savetxt('CVtab.txt',np.column_stack([x,stds(TP[1:]),noms(Cp), stds(Cp),alphax
 #print(cv(Cp,alpha(x),kappa,MVol,TP[:-1]))
 #print(Cp)
 ##plt.subplot(1, 2, 1)
-#plt.errorbar(x,noms(cv(Cp,alpha(x),kappa,MVol,x)),stds(cv(Cp,alpha(x),kappa,MVol,TP[1:])), stds(TP[1:]) ,fmt='rx',ecolor="red",label=r'$ C_V $' )
+plt.errorbar(x,noms(cv(Cp,alphax,kappa,MVol,x)),stds(cv(Cp,alphax,kappa,MVol,TP[1:])), stds(TP[1:]) ,fmt='rx',ecolor="red",label=r'$ C_V $' )
+plt.axhline(y=3*const.R, xmin=0,xmax=350, color="k", label=r'$3 \cdot R$')
+plt.axvline(x=170, ymin=0,ymax=35,ls='--', color='g', label=r'$ 170 K$')
+#plt.plot(x,noms(cv(Cp,alphax,kappa,MVol,x)) ,'rx', label='Kurve')
+#plt.plot(x,noms(Cp),'bx')
+plt.xlabel(r'$T \; / \; K$')
+plt.ylabel(r'$spezifische \; Wärme \; C_V \; / \; \frac{J}{mol\cdot K}$')
+plt.legend(loc='best')
+plt.grid()
+#plt.show()
+plt.savefig('Cplot1.pdf')
+
 #plt.errorbar(x,noms(Cp),stds(Cp), stds(TP[:-1]) ,fmt='bx',ecolor="blue", label= r'$C_p$')
 #plt.axhline(y=3*const.R, xmin=0,xmax=350, color="k", label=r'$3 \cdot R$')
 #plt.axvline(x=170, ymin=0,ymax=35,ls='--', color='g', label=r'$ 170 K$')
-#plt.plot(x,noms(cv(Cp,alpha(x),kappa,MVol,x)) ,'rx', label='Kurve')
-#plt.plot(x,noms(Cp),'bx')
+##plt.plot(x,noms(cv(Cp,alphax,kappa,MVol,x)) ,'rx', label='Kurve')
+##plt.plot(x,noms(Cp),'bx')
 #plt.xlabel(r'$T \; / \; K$')
-#plt.ylabel(r'$spezifische \; Wärme \; C \; / \; \frac{J}{mol\cdot K}$')
+#plt.ylabel(r'$spezifische \; Wärme \; C_p \; / \; \frac{J}{mol\cdot K}$')
 #plt.legend(loc='best')
+#plt.grid()
 ##plt.show()
-#plt.savefig('Cplot.pdf')
+#plt.savefig('Cplot2.pdf')
 
 #Teil c Debye Kurve:
 Tthet = TP[1:] 
