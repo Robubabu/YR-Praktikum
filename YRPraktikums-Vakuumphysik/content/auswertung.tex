@@ -184,7 +184,7 @@ muss der sich ergebende Fehler mit Formel \ref{eq:GaussFehler} zu
 \begin{equation}
   \label{eq:FehlerLnDruck}
   \sigma_{ln(p)}=\sqrt{\frac{\sigma_{p}^{2}}{\left(p - p_\symup{E}\right)^{2}} + \frac{\sigma_{p_{0}}^{2}}{\left(p_{0} - p_\symup{E}\right)^{2}}
-   + \sigma_{p_\symup{E}}^{2}\left(1-\frac{1}{\left(p - p_\symup{E}\right)}\right)^{2}}
+   + \sigma_{p_\symup{E}}^{2}\left(\frac{1}{\left(p_0 - p_\symup{E}\right)} -\frac{1}{\left(p - p_\symup{E}\right)}\right)^{2}}
 \end{equation}
 bestimmt werden.
 
@@ -237,7 +237,7 @@ Aus dem Parameter $b$ lässt sich nun ein gemitteltes Saugvermögen $S_\symup{g}
 Aus Gleichung \ref{eq:pt} folgt $b=\frac{S}{V}$. Mit einem Volumen von $V=(10,9 \pm 0,9)$\,l und ergibt sich:
 \begin{equation}
   S_\symup{g}= b \cdot V =(0,084 \m 0,002)\,\frac{1}{\symup{s}} \cdot (10,9 \pm 0,9)\,\symup{l} =(0,91\pm0,09)\,\frac{\symup{l}}{\symup{s}}
-  \label{eq:Saugvermögen}
+  \label{eq:Saugvermögen1}
 \end{equation}
 Da das Saugvermögen im allgemeinen nicht unabhängig vom Druck ist, anders als in der Herleitung der Gleichung \ref{eq:pt} angenommen,
 wird eine von Druckbereichen abhängige Untersuchung vorgenommen.
@@ -394,7 +394,7 @@ Es wurden mittels linerer Regression Ausgleichsgeraden der Form \ref{eq:Geradeng
         \centering
         \includegraphics[width=1\textwidth]{plots/LeckrateDreh1.pdf}
         \caption{Darstellung der Messwerte aus Tabelle \ref{tab:leck_Dreh3} mit gefitteter Ausgleichsgerade.}
-        \label{fig:Leck_Dreh3}
+        \label{fig:Leck_Dreh4}
     \end{subfigure}
     \caption{Darstellung Leckratenmessung bei der Drehschieberpumpe bei den Gleichgewichtsdrücken $p_\symup{g}=0,8$\, mbar und $p_\symup{g}=1$\, mbar.}
       \label{fig:leck_dreh_groß2}
@@ -635,7 +635,7 @@ Es wurden mittels linearer Regression Ausgleichsgeraden der Form \ref{eq:Geraden
         \centering
         \includegraphics[width=1\textwidth]{plots/LeckrateTurbo8_5.pdf}
         \caption{Darstellung der Messwerte aus Tabelle \ref{tab:leck_turbo3} mit gefitteter Ausgleichsgerade.}
-        \label{fig:Leck_turbo3}
+        \label{fig:Leck_turbo4}
     \end{subfigure}
     \caption{Leckratenmessung bei der Turbomolekularpumpe bei den Gleichgewichtsdrücken $p_\symup{g}=3 \cdot 10^{-5}$\, mbar und $p_\symup{g}=8 \cdot 10^{-5}$\, mbar.}
       \label{fig:leck_turbo_groß2}
